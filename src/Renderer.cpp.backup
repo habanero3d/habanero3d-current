@@ -1,0 +1,706 @@
+/*
+Copyright 2009-2011 Andrzej Skalski, Piotr Kufel, Piotr Białecki, Michał Żochowski, and Michał Szczepaniak
+This file is part of Habanero3d.
+
+Habanero3d is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Habanero3d is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
+
+
+ */
+
+// author: akuda, using parts of Qfel's code
+
+// TODO wypchnąć wysyłanie świateł i palety macierzy poza ciasne pętle
+
+#include "default.h"
+#include <stddef.h>
+
+#include <vector>
+#include "OpenGL.h"
+#include "HabMath.h"
+#include "Renderer.h"
+#include "Window.h"
+#include "Texture.h"
+#include "SceneMembership.h"
+#include "FrameDescription.h"
+#include "ShaderManager.h"
+#include "LightDrawTask.h"
+#include "LightShader.h"
+
+#include "GenericGeometry.h"
+#include "SkinVertex.h"
+#include "SubMesh.h"
+#include "ResourceManager.h"
+
+
+
+namespace Habanero
+{
+
+	Renderer::Renderer() : Singleton<Renderer>()
+	{
+		glewInit();
+		Constraints.poll();
+		Constraints.dump();
+		LightSetup.generateUBOs();
+		SkeletonSetup.generateBuffer();
+	}
+
+	Renderer::~Renderer()
+	{
+	}
+
+	void Renderer::drawFrameToSurface(const FrameDescription * frame, const Camera * camera, IRenderTarget * target)
+	{
+
+		matrix4f viewMatrix = camera->getViewMatrix();
+		LightSetup.setLights(frame->lights, viewMatrix);
+
+		bool shadowsEnabled = true; //this should be set in discovery
+
+		if (shadowsEnabled) //generating shadows
+		{
+			for (uint i = 0; i < LightSetup.getNumDirectionalLights(); ++i)
+			{
+				LightSetup.DirectionalShadowMaps[i].bindForDrawing();
+
+				drawGeometryTasks(frame, false, false, false); //both visible and shadow casters, no materials, no wireframe
+
+				LightSetup.DirectionalShadowMaps[i].unbind();
+
+				__checkForErrors();
+			}
+		}
+
+		HASSERT(__checkForErrors());
+		setRenderTarget(target);
+		HASSERT(__checkForErrors());
+
+		glEnable(GL_DEPTH_TEST);
+		glClearColor(0.0, 0.0, 0.0, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_BACK);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		gluPerspective(180 / M_PI * camera->getFOV(), camera->getRatio(), camera->getNearDist(), camera->getFarDist());
+
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		glLoadMatrixf((float*) &viewMatrix);
+
+		drawGeometryTasks(frame, true, true, false); //only-visible, yes for lightning, no to wireframe.
+
+		double RENDER_WIDTH = double(target->getWidth());
+		double RENDER_HEIGHT = double(target->getHeight());
+
+		glDisable(GL_CULL_FACE);
+		glDisable(GL_DEPTH_TEST);
+		
+		glUseProgram(0);
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		glOrtho(-RENDER_WIDTH / 2, RENDER_WIDTH / 2, -RENDER_HEIGHT / 2, RENDER_HEIGHT / 2, 1, 20);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		
+		glActiveTexture(GL_TEXTURE0); //ResourceManager::getInstance().getTexture("Content/textures/grass_tex.bmp")->getOpenGLID());
+		glBindTexture(GL_TEXTURE_2D, ResourceManager::getInstance().getTexture("Content/textures/grass_tex.bmp")->getOpenGLID());
+		//glBindTexture(GL_TEXTURE_2D, LightSetup.DirectionalShadowMaps[0].getDepthTextureID());
+		
+		glEnable(GL_TEXTURE_2D);
+		
+		glTranslated(0, 0, -1);
+		glBegin(GL_QUADS);
+			glTexCoord2d(0, 0);
+			glVertex3f(0, 0, 0);
+			glTexCoord2d(1, 0);
+			glVertex3f(RENDER_WIDTH / 2, 0, 0);
+			glTexCoord2d(1, 1);
+			glVertex3f(RENDER_WIDTH / 2, RENDER_HEIGHT / 2, 0);
+			glTexCoord2d(0, 1);
+			glVertex3f(0, RENDER_HEIGHT / 2, 0);
+		glEnd();
+		
+		glDisable(GL_TEXTURE_2D);
+	}
+
+	void Renderer::setRenderTarget(IRenderTarget* target)
+	{
+		switch (target->type)
+		{
+			case IRenderTarget::RenderTargetType::Texture:
+				setRenderTargetToTexture(static_cast<Texture*> (target));
+				break;
+			case IRenderTarget::RenderTargetType::Window:
+				setRenderTargetToWindow(static_cast<Window*> (target));
+				break;
+			default:
+				HASSERT(false);
+				break;
+		}
+	}
+
+	void Renderer::setRenderTargetToTexture(Texture* target)
+	{
+		// TODO full-scale render-to-texture technique is not yet implemented
+	}
+
+	void Renderer::setRenderTargetToWindow(Window* target)
+	{
+		//NEWLOG("[Renderer] Setting render target to Window.");
+		target->bindForDrawing();
+		glViewport(0, 0, target->getWidth(), target->getHeight());
+	}
+
+	void Renderer::drawGeometryTasks(const FrameDescription* frame, bool only_visible, bool use_materials, bool wireframe)
+	{
+		//TODO this can be optimised by removing const qualifier and pre-sorting task arrays
+
+		for (uint i = 0; i < frame->visibleObjects.size(); ++i)
+			if (frame->visibleObjects[i]->type == GeometryDrawTask::GeometryType::StaticMesh)
+				drawStaticObject(static_cast<StaticObjectDrawTask*> (frame->visibleObjects[i]), use_materials, wireframe);
+
+
+		for (uint i = 0; i < frame->visibleObjects.size(); ++i)
+			if (frame->visibleObjects[i]->type == GeometryDrawTask::GeometryType::SkinnedMesh)
+				drawSkeletalObject(static_cast<SkinnedObjectDrawTask*> (frame->visibleObjects[i]), use_materials, wireframe);
+
+		if (use_materials) // there is no point in drawing lines and points for shadowing.
+			for (uint i = 0; i < frame->visibleObjects.size(); ++i)
+			{
+				if (frame->visibleObjects[i]->type == GeometryDrawTask::GeometryType::Lines)
+					drawLines(static_cast<LinesDrawTask*> (frame->visibleObjects[i]));
+				if (frame->visibleObjects[i]->type == GeometryDrawTask::GeometryType::Points)
+					drawPoints(static_cast<PointsDrawTask*> (frame->visibleObjects[i]));
+			}
+
+		if (only_visible == true)
+			return;
+
+		//static first
+		for (uint i = 0; i < frame->shadowCasters.size(); ++i)
+			if (frame->shadowCasters[i]->type == GeometryDrawTask::GeometryType::StaticMesh)
+				drawStaticObject(static_cast<StaticObjectDrawTask*> (frame->shadowCasters[i]), use_materials, wireframe);
+
+		for (uint i = 0; i < frame->shadowCasters.size(); ++i)
+			if (frame->shadowCasters[i]->type == GeometryDrawTask::GeometryType::SkinnedMesh)
+				drawSkeletalObject(static_cast<SkinnedObjectDrawTask*> (frame->shadowCasters[i]), use_materials, wireframe);
+
+	}
+
+	void Renderer::setupShadowMap0(ShaderProgram * shader, const matrix4f transformation)
+	{
+		
+		//TODO wynieść stąd ten kod!
+		GLint smloc = glGetUniformLocation(shader->getProgramHandler(), "ShadowMap");
+		//HASSERT(smloc != -1);
+		glMatrixMode(GL_TEXTURE);
+		glActiveTexture(GL_TEXTURE7);
+		glBindTexture(GL_TEXTURE_2D, LightSetup.DirectionalShadowMaps[0].getDepthTextureID());
+		glUniform1i(smloc, 7);
+
+		
+		matrix4f t = transformation;//.inversed();
+		glLoadMatrixf((GLfloat*) &matrix4f::bias);
+		glMultMatrixf((GLfloat*)&t);
+		glMultMatrixf((GLfloat*) & LightSetup.DirectionalShadowMaps[0].getShadowMapMatrix());
+		glMatrixMode(GL_MODELVIEW);
+		
+		glActiveTexture(GL_TEXTURE0);
+	}
+
+	void Renderer::drawSkeletalObject(SkinnedObjectDrawTask * task, bool use_materials, bool wireframe)
+	{
+		HASSERT(__checkForErrors());
+
+		glPushMatrix();
+		glMultMatrixf((float*) &task->transformation);
+
+		SkeletonSetup.setPaletteFromTask(task);
+
+		for (uint mesh_no = 0; mesh_no < task->getNumMeshes(); ++mesh_no)
+		{
+			GenericGeometry<SkinVertex> * geometry = task->getGeometryAt(mesh_no);
+			const SkinVertex * vertices = geometry->getVertexData();
+			const uint numVertices = geometry->getNumVertices();
+
+			bool wasBuffered = geometry->MemorySetting.isCached();
+			if (!wasBuffered)
+				setSkinnedMeshCache(geometry, true);
+
+
+			glBindVertexArray(geometry->MemorySetting.getVertexArrayID());
+			GLuint vertexBufferID = geometry->MemorySetting.getVertexBufferID();
+			glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+
+			if (wireframe)
+				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+			uint indicesOffset = 0u; // counted in number of vertices offset of submesh in indices buffer.
+
+
+			for (uint subMeshNo = 0; subMeshNo < geometry->getNumSubMeshes(); subMeshNo++)
+			{
+				const SubMesh * subMesh = geometry->getSubMesh(subMeshNo);
+				SkeletalShader * shader = NULL;
+
+				if (use_materials)
+				{
+					const Material * material = subMesh->getMaterial().get();
+					shader = ShaderManager::getInstance().getSkeletalShaderProgram(material->getFlags());
+					//NEWLOG("drawSkeletalObject enables shader");
+					//NEWLOG("Drawing subMesh no %u", subMeshNo);
+					shader->enable();
+					//NEWLOG("skel:");
+					//shader->dumpAttribInfo();
+					//if (!!subMesh->getMaterial()) //TODO check if none-material ever happens
+					shader->setAllFromMaterial(material);
+					setupShadowMap0(shader, task->transformation);
+				}
+				else
+				{
+					shader = ShaderManager::getInstance().getSkeletalShadowShaderProgram();
+					shader->enable();
+				}
+
+				glDrawElements(GL_TRIANGLES,
+							subMesh->getNumIndices(),
+							GL_UNSIGNED_INT,
+							(GLvoid*) (indicesOffset * sizeof (uint))
+							);
+				indicesOffset += subMesh->getNumIndices();
+
+				shader->disable();
+			}
+
+			if (wireframe)
+				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+			glBindVertexArray(0);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			if (!wasBuffered)
+				setSkinnedMeshCache(geometry, false);
+		}
+
+		glPopMatrix();
+		HASSERT(__checkForErrors());
+	}
+
+	void Renderer::drawStaticObject(StaticObjectDrawTask * task, bool use_materials, bool wireframe)
+	{
+		HASSERT(__checkForErrors());
+
+		glPushMatrix();
+		glMultMatrixf((float*) &(task->transformation));
+		//NEWLOG("drawing static, applying trans %s", task->transformation.toString().c_str());
+
+		GenericGeometry<StaticVertex> * geometry = task->getGeometry();
+		const StaticVertex * vertices = geometry->getVertexData();
+		const uint numVertices = geometry->getNumVertices();
+
+		bool wasBuffered = geometry->MemorySetting.isCached();
+		if (!wasBuffered)
+			setStaticMeshCache(geometry, true);
+
+		glBindVertexArray(geometry->MemorySetting.getVertexArrayID());
+		GLuint vertexBufferID = geometry->MemorySetting.getVertexBufferID();
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+
+		for (uint i = 0; i < geometry->getNumSubMeshes(); i++)
+		{
+
+			const SubMesh * subMesh = geometry->getSubMesh(i);
+			LightShader * shader = NULL;
+
+			if (use_materials)
+			{
+				const Material * material = subMesh->getMaterial().get();
+
+				shader = ShaderManager::getInstance().getLightShaderProgram(material->getFlags());
+				//NEWLOG("drawStaticObject enables shader");
+				shader->enable();
+				//NEWLOG("stt:");
+				//shader->dumpAttribInfo();
+				//if (!!subMesh->getMaterial()) TODO: check if none material ever happens.
+				shader->setAllFromMaterial(material);
+				setupShadowMap0(shader, task->transformation);
+				//shader->dumpUniformInfo();
+			}
+			else
+			{
+				shader = ShaderManager::getInstance().getStaticShadowShaderProgram();
+				shader->enable();
+			}
+
+			if (wireframe)
+				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+			glDrawElements(GL_TRIANGLES,
+						subMesh->getNumIndices(),
+						GL_UNSIGNED_INT,
+						(GLvoid*) 0
+						);
+
+			if (wireframe)
+				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+			shader->disable();
+		}
+
+		glBindVertexArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		if (!wasBuffered)
+			setStaticMeshCache(geometry, false);
+
+		glPopMatrix();
+		HASSERT(__checkForErrors());
+	}
+
+	void Renderer::drawLines(LinesDrawTask* task)
+	{
+		HASSERT(__checkForErrors());
+		HASSERT(ShaderManager::getInstance().isShaderProgramActive() == false);
+
+		glPushMatrix();
+		glMultMatrixf((float*) &task->transformation);
+
+		const line3f *lines = task->getLinesPtr();
+
+		glColor4fv((GLfloat*) & task->getColor());
+
+		glBegin(GL_LINES);
+		for (uint i = task->getLinesNum(); i--;)
+		{
+			glVertex3fv((float*) &lines[i].p1);
+			glVertex3fv((float*) &lines[i].p2);
+		}
+		glEnd();
+
+		glColor4fv((GLfloat*) & Color::Zero);
+
+		glPopMatrix();
+		HASSERT(__checkForErrors());
+	}
+
+	void Renderer::drawPoints(PointsDrawTask* task)
+	{
+		HASSERT(__checkForErrors());
+		HASSERT(ShaderManager::getInstance().isShaderProgramActive() == false);
+
+		glPushMatrix();
+		//glPointSize(3);
+		glMultMatrixf((float*) &(task->transformation));
+		glColor4fv((GLfloat*) & task->getColor());
+
+		const vector3f *points = task->getPointsPtr();
+		glBegin(GL_POINTS);
+		for (uint i = task->getPointsNum(); i--;)
+			glVertex3fv((float*) &points[i]);
+		glEnd();
+
+		glColor4fv((GLfloat*) & Color::Zero);
+
+		glPopMatrix();
+		HASSERT(__checkForErrors());
+	}
+
+	bool Renderer::__checkForErrors()
+	{
+		for (uint errNo = glGetError(); errNo != GL_NO_ERROR; __errorList.push_back(errNo));
+
+		if (__errorList.size() == 0)
+			return true;
+		else
+		{
+			for (uint i = 0; i < __errorList.size(); ++i)
+				NEWLOG("[Renderer] [OpenGL error] %s", gluErrorString(__errorList[i]));
+			return false;
+		}
+	}
+
+	void Renderer::__removePendingErrors()
+	{
+		NEWLOG("[Renderer] removing %u errors from __errorList", __errorList.size());
+		return __errorList.clear();
+	}
+
+	std::string Renderer::__getErrorDescription(uint errNo)
+	{
+		return std::string((const char*) gluErrorString(errNo));
+	}
+
+	std::vector<std::string> Renderer::__getAllErrors()
+	{
+		std::vector<std::string> res;
+		for (uint i = 0; i < __errorList.size(); ++i)
+			res.push_back(__getErrorDescription(__errorList[i]));
+
+		__removePendingErrors();
+		return res;
+	}
+
+	bool Renderer::__bindTexture(const uint width, const uint height, const void * data, uint &out_openGLID)
+	{
+		if (!__checkForErrors())
+		{
+			NEWLOG("[Renderer] error prior to binding texture.");
+			return false;
+		}
+
+		uint tmp_openGLID;
+		glGenTextures(1, &tmp_openGLID);
+		glBindTexture(GL_TEXTURE_2D, tmp_openGLID);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glBindTexture(GL_TEXTURE_2D, 0);
+
+		if (!__checkForErrors())
+		{
+			NEWLOG("[Renderer] error binding texture.");
+			return false;
+		}
+
+		out_openGLID = tmp_openGLID;
+		return true;
+	}
+
+	bool Renderer::__unbindTexture(const uint * openGLID)
+	{
+		if (!__checkForErrors())
+		{
+			NEWLOG("[Renderer] error prior to unbinding texture.");
+			return false;
+		}
+
+		glDeleteTextures(1, openGLID);
+
+		if (!__checkForErrors())
+		{
+			NEWLOG("[Renderer] error unbinding texture.");
+			return false;
+		}
+		else return true;
+	}
+
+	void Renderer::ConstarintsType::poll()
+	{
+		openGLversion = std::string((char*) glGetString(GL_VERSION));
+
+		glGetIntegerv(GL_MAX_VERTEX_UNIFORM_BLOCKS, &maxVertexUniformBuffers);
+		glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_BLOCKS, &maxFragmentUniformBuffers);
+		glGetIntegerv(GL_MAX_UNIFORM_BLOCK_SIZE, &maxUniformBufferSize);
+		glGetIntegerv(GL_MAX_UNIFORM_BUFFER_BINDINGS, &maxUniformBindings);
+	}
+
+	void Renderer::ConstarintsType::dump() const
+	{
+		NEWLOG("OpenGL version is %s", openGLversion.c_str());
+
+		NEWLOG("OpenGL implementation constraints:\nMaximum number of uniform buffers:\nfor vertex - %d\nfor fragment - %d\nMaximum size of uniform buffer is %d\nMaximum number of uniform buffer bindings is %d",
+			maxVertexUniformBuffers,
+			maxFragmentUniformBuffers,
+			maxUniformBufferSize,
+			maxUniformBindings);
+	}
+
+	const RendererLightSetup& Renderer::getLightSetup() const
+	{
+		return LightSetup;
+	}
+
+	const RendererSkeletonSetup& Renderer::getSkeletonSetup() const
+	{
+		return SkeletonSetup;
+	}
+
+	void Renderer::unsetMeshCache(GenericGeometryBase* geometry)
+	{
+		/*
+		 this does not differ for Skinned and Static meshes.
+		 */
+		HASSERT(geometry->MemorySetting.isCached() == true);
+
+		GLuint vertexBufferID, indicesBufferID, vertexArrayID;
+		vertexBufferID = geometry->MemorySetting.getVertexBufferID();
+		indicesBufferID = geometry->MemorySetting.getIndicesBufferID();
+		vertexArrayID = geometry->MemorySetting.getVertexArrayID();
+
+		glDeleteBuffers(1, &vertexBufferID);
+		glDeleteBuffers(1, &indicesBufferID);
+		glDeleteVertexArrays(1, &vertexArrayID);
+
+		geometry->MemorySetting.unsetCache();
+		HASSERT(__checkForErrors());
+	}
+
+	void Renderer::__setSkinnedMeshVertexAttributes()
+	{
+		/*
+	as defined in SkinVertex.h:
+			 
+	struct SkinVertex
+	{
+		vector3f position;
+		vector3f normal;
+		vector2f texCoord;
+		uint jointIndices[4];
+		float jointWeights[4];
+	};
+		 */
+		/*	// accroding to OpenGL 3.3 specification, this code should work,
+			// and it's actually recomemnded way to execute this funciton
+			// (along with proper modification of vertex shader in glsl files.
+			// Unfortunately, for unknown reasons, it does not work.
+			// If you know what I do wrong, and/or how to fix it, please mail
+			// me (akuda) or any member of Habanero team.
+		 
+				glEnableVertexAttribArray(SkeletalShader::in_positionBindingIndex);
+				glEnableVertexAttribArray(SkeletalShader::in_normalBindingIndex);
+				glEnableVertexAttribArray(SkeletalShader::in_texCoordBindingIndex);
+		
+
+				glVertexAttribPointer(SkeletalShader::in_positionBindingIndex, 3, GL_FLOAT, GL_FALSE, sizeof (SkinVertex), (const GLvoid*)( NULL + offsetof(SkinVertex, position)));
+				glVertexAttribPointer(SkeletalShader::in_normalBindingIndex, 3, GL_FLOAT, GL_FALSE, sizeof (SkinVertex), (const GLvoid*)( NULL + offsetof(SkinVertex, normal)));
+				glVertexAttribPointer(SkeletalShader::in_texCoordBindingIndex, 2, GL_FLOAT, GL_FALSE, sizeof (SkinVertex), (const GLvoid*)( NULL + offsetof(SkinVertex, texCoord)));
+		 */
+
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glEnableClientState(GL_NORMAL_ARRAY);
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+		glVertexPointer(3, GL_FLOAT, sizeof (SkinVertex), (GLvoid*) offsetof(SkinVertex, position));
+		glNormalPointer(GL_FLOAT, sizeof (SkinVertex), (GLvoid*) offsetof(SkinVertex, normal));
+		glTexCoordPointer(2, GL_FLOAT, sizeof (SkinVertex), (GLvoid*) offsetof(SkinVertex, texCoord));
+
+		glEnableVertexAttribArray(SkeletalShader::in_boneIndicesBindingIndex);
+		glEnableVertexAttribArray(SkeletalShader::in_boneWeightsBindingIndex);
+		glVertexAttribIPointer(SkeletalShader::in_boneIndicesBindingIndex, 4, GL_UNSIGNED_INT, sizeof (SkinVertex), (GLvoid*) offsetof(SkinVertex, jointIndices));
+		glVertexAttribPointer(SkeletalShader::in_boneWeightsBindingIndex, 4, GL_FLOAT, GL_FALSE, sizeof (SkinVertex), (GLvoid*) offsetof(SkinVertex, jointWeights));
+	}
+
+	void Renderer::__setStaticMeshVertexAttributes()
+	{
+		/*
+	as defined in StaticVertex.h:
+		 
+	struct StaticVertex
+	{
+		vector3f position,
+				 normal;
+		vector2f texCoord;
+	};
+		 */
+
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glEnableClientState(GL_NORMAL_ARRAY);
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+		glVertexPointer(3, GL_FLOAT, sizeof (StaticVertex), (GLvoid*) offsetof(StaticVertex, position));
+		glNormalPointer(GL_FLOAT, sizeof (StaticVertex), (GLvoid*) offsetof(StaticVertex, normal));
+		glTexCoordPointer(2, GL_FLOAT, sizeof (StaticVertex), (GLvoid*) offsetof(StaticVertex, texCoord));
+	}
+
+	void Renderer::setSkinnedMeshCache(GenericGeometry<SkinVertex>* geometry, bool cache)
+	{
+		setMeshCache(geometry, true, cache);
+	}
+
+	void Renderer::setStaticMeshCache(GenericGeometry<StaticVertex>* geometry, bool cache)
+	{
+		setMeshCache(geometry, false, cache);
+	}
+
+	void Renderer::setMeshCache(GenericGeometryBase * geometry, bool skinned, bool cache)
+	{
+		if (cache == false)
+		{
+			unsetMeshCache(geometry);
+		}
+		else
+		{ //cache == true
+
+			/*
+			 here, we are creating a vertex buffer for vertices, and inform
+			 OpenGL on what informations it contains.
+			 */
+			HASSERT(geometry->MemorySetting.isCached() == false);
+
+			GLuint vertexBufferID, indicesBufferID, vertexArrayID;
+
+			glGenVertexArrays(1, &vertexArrayID);
+			glBindVertexArray(vertexArrayID);
+
+			glGenBuffers(1, &vertexBufferID);
+			glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+			//allocating memory, setting usage policy, copying vertex data to buffer.
+			glBufferData(GL_ARRAY_BUFFER, geometry->getVertexDataSize(), geometry->getVertexData(), GL_DYNAMIC_DRAW);
+
+			if (skinned)
+				__setSkinnedMeshVertexAttributes();
+			else //static
+				__setStaticMeshVertexAttributes();
+
+
+
+			/* now the indices array */
+
+			glGenBuffers(1, &indicesBufferID);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indicesBufferID);
+			//allocating memory and setting usage policy, no data copying here!
+			glBufferData(GL_ELEMENT_ARRAY_BUFFER, geometry->getIndicesSize(), NULL, GL_STATIC_DRAW);
+
+			uint indicesOffset = 0; //measured in number of indices, not in bytes.
+			for (uint subMeshNo = 0; subMeshNo < geometry->getNumSubMeshes(); ++subMeshNo)
+			{
+				const SubMesh * subMesh = geometry->getSubMesh(subMeshNo);
+				glBufferSubData(GL_ELEMENT_ARRAY_BUFFER,
+								indicesOffset * sizeof (uint), //where
+								subMesh->getNumIndices() * sizeof (uint), //how much
+								subMesh->getIndices()); // from where
+				indicesOffset += subMesh->getNumIndices();
+			}
+
+			glBindVertexArray(0);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+			if (__checkForErrors())
+			{
+				geometry->MemorySetting.setCacheAt(vertexBufferID, indicesBufferID, vertexArrayID);
+			}
+			else
+			{
+				// TODO some intelligent exception handling
+				HASSERT(false);
+			}
+		}
+	}
+
+	void Renderer::executeMemoryOrders(const std::vector<MemorySettingOrder>& orders)
+	{
+
+	}
+
+	bool Renderer::isShaderProgramActive()
+	{
+		GLint program;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &program);
+		return program != 0;
+	}
+
+}

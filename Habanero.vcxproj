@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{13FD74E4-6D6D-4B9D-8371-D3EDF43C9A4C}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>Habanero</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)..\work\</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)..\work\</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ForcedIncludeFiles>default.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\third-party\glew\include;$(ProjectDir)..\third-party\sfml\include</AdditionalIncludeDirectories>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAsManaged>false</CompileAsManaged>
+      <BrowseInformation>true</BrowseInformation>
+      <ForcedUsingFiles>
+      </ForcedUsingFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ForcedUsingFiles>
+      </ForcedUsingFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\third-party\glew\include;$(ProjectDir)..\third-party\sfml\include</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>default.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AABB.cpp" />
+    <ClCompile Include="src\AmbientLight.cpp" />
+    <ClCompile Include="src\assert.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\CFileStream.cpp" />
+    <ClCompile Include="src\CLODSkeletalAnimatedObject.cpp" />
+    <ClCompile Include="src\CLODSkinnedMesh.cpp" />
+    <ClCompile Include="src\CLODSMF.cpp" />
+    <ClCompile Include="src\CLODStaticMesh.cpp" />
+    <ClCompile Include="src\CLODStaticObject.cpp" />
+    <ClCompile Include="src\CLODTMF.cpp" />
+    <ClCompile Include="src\Color.cpp" />
+    <ClCompile Include="src\Cylinder.cpp" />
+    <ClCompile Include="src\DirectionalLight.cpp" />
+    <ClCompile Include="src\DLODLevel.cpp" />
+    <ClCompile Include="src\DLODSkeletalAnimatedObject.cpp" />
+    <ClCompile Include="src\DLODSkinnedMesh.cpp" />
+    <ClCompile Include="src\DLODSMF.cpp" />
+    <ClCompile Include="src\DLODStaticMesh.cpp" />
+    <ClCompile Include="src\DLODStaticObject.cpp" />
+    <ClCompile Include="src\DLODTMF.cpp" />
+    <ClCompile Include="src\Event.cpp" />
+    <ClCompile Include="src\EventConverter.cpp" />
+    <ClCompile Include="src\Exception.cpp" />
+    <ClCompile Include="src\File.cpp" />
+    <ClCompile Include="src\FPSLogger.cpp" />
+    <ClCompile Include="src\Frustum.cpp" />
+    <ClCompile Include="src\GenericGeometry.cpp" />
+    <ClCompile Include="src\HeightMapObject.cpp" />
+    <ClCompile Include="src\HMF.cpp" />
+    <ClCompile Include="src\HeightMapMesh.cpp" />
+    <ClCompile Include="src\IStream.cpp" />
+    <ClCompile Include="src\Keyboard.cpp" />
+    <ClCompile Include="src\Light.cpp" />
+    <ClCompile Include="src\LightShader.cpp" />
+    <ClCompile Include="src\line3.cpp" />
+    <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\Loggers.cpp" />
+    <ClCompile Include="src\Material.cpp" />
+    <ClCompile Include="src\MaterialManager.cpp" />
+    <ClCompile Include="src\matrix4.cpp" />
+    <ClCompile Include="src\MFCommon.cpp" />
+    <ClCompile Include="src\ModelFactory.cpp" />
+    <ClCompile Include="src\Mouse.cpp" />
+    <ClCompile Include="src\MTF.cpp" />
+    <ClCompile Include="src\Mutex.cpp" />
+    <ClCompile Include="src\IResource.cpp" />
+    <ClCompile Include="src\LogManager.cpp" />
+    <ClCompile Include="src\Polyhedron.cpp" />
+    <ClCompile Include="src\ResourceManager.cpp" />
+    <ClCompile Include="src\RootObject.cpp" />
+    <ClCompile Include="src\Node.cpp" />
+    <ClCompile Include="src\OBB.cpp" />
+    <ClCompile Include="src\OpenGL_Renderer.cpp" />
+    <ClCompile Include="src\Pick.cpp" />
+    <ClCompile Include="src\plane.cpp" />
+    <ClCompile Include="src\PlaneGrid.cpp" />
+    <ClCompile Include="src\PointLight.cpp" />
+    <ClCompile Include="src\psx_File.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\quaternion.cpp" />
+    <ClCompile Include="src\RenderThread.cpp" />
+    <ClCompile Include="src\RT.cpp" />
+    <ClCompile Include="src\SAF.cpp" />
+    <ClCompile Include="src\SCF.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\ShaderFlags.cpp" />
+    <ClCompile Include="src\ShaderManager.cpp" />
+    <ClCompile Include="src\ShaderProgram.cpp" />
+    <ClCompile Include="src\ShadowCasterVolume.cpp" />
+    <ClCompile Include="src\SkeletalAnimatedObject.cpp" />
+    <ClCompile Include="src\SkeletalAnimation.cpp" />
+    <ClCompile Include="src\SkeletalAnimationState.cpp" />
+    <ClCompile Include="src\SkeletalAnimationStateSet.cpp" />
+    <ClCompile Include="src\SkeletalShader.cpp" />
+    <ClCompile Include="src\Skeleton.cpp" />
+    <ClCompile Include="src\SkeletonJoint.cpp" />
+    <ClCompile Include="src\SkeletonJointKeyframeSequence.cpp" />
+    <ClCompile Include="src\SkeletonVisualizer.cpp" />
+    <ClCompile Include="src\SkinnedMesh.cpp" />
+    <ClCompile Include="src\SMF.cpp" />
+    <ClCompile Include="src\Spatial.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="src\SRT.cpp" />
+    <ClCompile Include="src\StaticMesh.cpp" />
+    <ClCompile Include="src\StaticObject.cpp" />
+    <ClCompile Include="src\StringUtil.cpp" />
+    <ClCompile Include="src\SubMesh.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\Thread.cpp" />
+    <ClCompile Include="src\TMF.cpp" />
+    <ClCompile Include="src\VDLODSkeletalAnimatedObject.cpp" />
+    <ClCompile Include="src\VDLODSkinnedMesh.cpp" />
+    <ClCompile Include="src\VDLODSMF.cpp" />
+    <ClCompile Include="src\VDLODStaticMesh.cpp" />
+    <ClCompile Include="src\VDLODStaticObject.cpp" />
+    <ClCompile Include="src\VDLODTMF.cpp" />
+    <ClCompile Include="src\vector2.cpp" />
+    <ClCompile Include="src\vector3.cpp" />
+    <ClCompile Include="src\VSplit.cpp" />
+    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="src\win_File.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AABB.h" />
+    <ClInclude Include="src\Algorithm.h" />
+    <ClInclude Include="src\AmbientLight.h" />
+    <ClInclude Include="src\assert.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\CFileStream.h" />
+    <ClInclude Include="src\CLODSkeletalAnimatedObject.h" />
+    <ClInclude Include="src\CLODSkinnedMesh.h" />
+    <ClInclude Include="src\CLODSMF.h" />
+    <ClInclude Include="src\CLODStaticMesh.h" />
+    <ClInclude Include="src\CLODStaticObject.h" />
+    <ClInclude Include="src\CLODTMF.h" />
+    <ClInclude Include="src\Color.h" />
+    <ClInclude Include="src\Cylinder.h" />
+    <ClInclude Include="src\default.h" />
+    <ClInclude Include="src\DirectionalLight.h" />
+    <ClInclude Include="src\DLODLevel.h" />
+    <ClInclude Include="src\DLODSkeletalAnimatedObject.h" />
+    <ClInclude Include="src\DLODSkinnedMesh.h" />
+    <ClInclude Include="src\DLODSMF.h" />
+    <ClInclude Include="src\DLODStaticMesh.h" />
+    <ClInclude Include="src\DLODStaticObject.h" />
+    <ClInclude Include="src\DLODTMF.h" />
+    <ClInclude Include="src\Enum.h" />
+    <ClInclude Include="src\Event.h" />
+    <ClInclude Include="src\EventArgs.h" />
+    <ClInclude Include="src\EventConverter.h" />
+    <ClInclude Include="src\Exception.h" />
+    <ClInclude Include="src\FastDelegate.h" />
+    <ClInclude Include="src\FastDelegateBind.h" />
+    <ClInclude Include="src\File.h" />
+    <ClInclude Include="src\FPSLogger.h" />
+    <ClInclude Include="src\Frustum.h" />
+    <ClInclude Include="src\Functor.h" />
+    <ClInclude Include="src\GenericGeometry.h" />
+    <ClInclude Include="src\GenericManager.h" />
+    <ClInclude Include="src\GeometryTask.h" />
+    <ClInclude Include="src\GUIComponent.h" />
+    <ClInclude Include="src\HeightMapObject.h" />
+    <ClInclude Include="src\HMF.h" />
+    <ClInclude Include="src\HeightMapMesh.h" />
+    <ClInclude Include="src\IBoundingVolume.h" />
+    <ClInclude Include="src\IStream.h" />
+    <ClInclude Include="src\Keyboard.h" />
+    <ClInclude Include="src\Light.h" />
+    <ClInclude Include="src\LightShader.h" />
+    <ClInclude Include="src\LightTask.h" />
+    <ClInclude Include="src\line3.h" />
+    <ClInclude Include="src\Logger.h" />
+    <ClInclude Include="src\Loggers.h" />
+    <ClInclude Include="src\Mapping.h" />
+    <ClInclude Include="src\Material.h" />
+    <ClInclude Include="src\HabMath.h" />
+    <ClInclude Include="src\MaterialManager.h" />
+    <ClInclude Include="src\matrix4.h" />
+    <ClInclude Include="src\Memory.h" />
+    <ClInclude Include="src\MFCommon.h" />
+    <ClInclude Include="src\Model.h" />
+    <ClInclude Include="src\ModelFactory.h" />
+    <ClInclude Include="src\Mouse.h" />
+    <ClInclude Include="src\MTF.h" />
+    <ClInclude Include="src\Mutex.h" />
+    <ClInclude Include="src\IResource.h" />
+    <ClInclude Include="src\LogManager.h" />
+    <ClInclude Include="src\Polyhedron.h" />
+    <ClInclude Include="src\ResourceManager.h" />
+    <ClInclude Include="src\SCF.h" />
+    <ClInclude Include="src\ShadowCasterVolume.h" />
+    <ClInclude Include="src\Specific_ptr.h" />
+    <ClInclude Include="src\RootObject.h" />
+    <ClInclude Include="src\Node.h" />
+    <ClInclude Include="src\OBB.h" />
+    <ClInclude Include="src\OpenGL.h" />
+    <ClInclude Include="src\OpenGL_Renderer.h" />
+    <ClInclude Include="src\Pick.h" />
+    <ClInclude Include="src\plane.h" />
+    <ClInclude Include="src\PlaneGrid.h" />
+    <ClInclude Include="src\PointLight.h" />
+    <ClInclude Include="src\ProcessedScene.h" />
+    <ClInclude Include="src\quaternion.h" />
+    <ClInclude Include="src\RenderThread.h" />
+    <ClInclude Include="src\RT.h" />
+    <ClInclude Include="src\SAF.h" />
+    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\ShaderFlags.h" />
+    <ClInclude Include="src\ShaderManager.h" />
+    <ClInclude Include="src\ShaderProgram.h" />
+    <ClInclude Include="src\SkeletalAnimatedObject.h" />
+    <ClInclude Include="src\SkeletalAnimation.h" />
+    <ClInclude Include="src\SkeletalAnimationState.h" />
+    <ClInclude Include="src\SkeletalAnimationStateSet.h" />
+    <ClInclude Include="src\SkeletalShader.h" />
+    <ClInclude Include="src\Skeleton.h" />
+    <ClInclude Include="src\SkeletonJoint.h" />
+    <ClInclude Include="src\SkeletonJointKeyframe.h" />
+    <ClInclude Include="src\SkeletonJointKeyframeSequence.h" />
+    <ClInclude Include="src\SkeletonVisualizer.h" />
+    <ClInclude Include="src\SkinnedMesh.h" />
+    <ClInclude Include="src\SkinVertex.h" />
+    <ClInclude Include="src\SMF.h" />
+    <ClInclude Include="src\Spatial.h" />
+    <ClInclude Include="src\Sphere.h" />
+    <ClInclude Include="src\SRT.h" />
+    <ClInclude Include="src\StaticMesh.h" />
+    <ClInclude Include="src\StaticObject.h" />
+    <ClInclude Include="src\StaticVertex.h" />
+    <ClInclude Include="src\StringUtil.h" />
+    <ClInclude Include="src\SubMesh.h" />
+    <ClInclude Include="src\Texture.h" />
+    <ClInclude Include="src\Thread.h" />
+    <ClInclude Include="src\TMF.h" />
+    <ClInclude Include="src\UnifiedManager.h" />
+    <ClInclude Include="src\VDLODSkeletalAnimatedObject.h" />
+    <ClInclude Include="src\VDLODSkinnedMesh.h" />
+    <ClInclude Include="src\VDLODSMF.h" />
+    <ClInclude Include="src\VDLODStaticMesh.h" />
+    <ClInclude Include="src\VDLODStaticObject.h" />
+    <ClInclude Include="src\VDLODTMF.h" />
+    <ClInclude Include="src\vector2.h" />
+    <ClInclude Include="src\vector3.h" />
+    <ClInclude Include="src\VSplit.h" />
+    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\win_windows.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

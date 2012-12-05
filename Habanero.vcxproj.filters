@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\DLOD">
+      <UniqueIdentifier>{64869af4-5a2c-499c-a409-4c8255d10be4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DLOD">
+      <UniqueIdentifier>{912db7a1-8469-4415-8004-f74924eba75a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI">
+      <UniqueIdentifier>{989f6a9f-3926-48f0-ac17-00c9baaab516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ResourceManager">
+      <UniqueIdentifier>{813fa9a8-91c6-4f8b-a82b-76b397504083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ResourceManager">
+      <UniqueIdentifier>{ca2d4f2e-d057-46be-a646-adf994f778e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BB">
+      <UniqueIdentifier>{f5caa00d-3773-48ec-b133-5b71b1a93587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource">
+      <UniqueIdentifier>{b9785442-0e0b-4892-8f59-5e4dd7463e8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Light">
+      <UniqueIdentifier>{699f28b2-1859-4cf8-b397-a961952a9762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Spatial">
+      <UniqueIdentifier>{2a4195be-0e93-48a1-b249-208445036e0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileFormat">
+      <UniqueIdentifier>{ec173bb3-cf52-4fd1-ba9e-5c262070f0c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Struct">
+      <UniqueIdentifier>{7e48ae95-ba52-43c7-8a88-238b13d2a0af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader">
+      <UniqueIdentifier>{87f9a591-1e4f-49ad-bde1-da8297bcf976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Platform">
+      <UniqueIdentifier>{29f81a6d-b8f3-4c73-9eb3-5f08aad53c57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\File">
+      <UniqueIdentifier>{f352de50-3ed6-409b-8c3c-2e6a481fcb72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FileFormat">
+      <UniqueIdentifier>{1ce69c2e-b371-4017-8405-b581fc3d9679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BB">
+      <UniqueIdentifier>{4699c732-32b2-4f1f-a756-1e08746a365a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Light">
+      <UniqueIdentifier>{4fd29ce7-81d1-4551-9d73-72bc8f3c4d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SkeletalAnimation">
+      <UniqueIdentifier>{0c393185-2058-4511-a1fb-f080cc8d799a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Spatial">
+      <UniqueIdentifier>{d4435f24-5786-4fc2-be9e-eeaa97636e7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Platform">
+      <UniqueIdentifier>{3c3798e9-a8f1-45f2-bf60-74873e588dfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource">
+      <UniqueIdentifier>{51d16a54-fc8d-4bb9-bbca-745ac4090076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shader">
+      <UniqueIdentifier>{35e80572-c437-4e79-b752-1a2f5f191d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Struct">
+      <UniqueIdentifier>{a4853095-2565-432d-b3c4-d04ff443ed17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\File">
+      <UniqueIdentifier>{e6806e5d-e6ef-4c76-9421-46f59e618b41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer">
+      <UniqueIdentifier>{868b38e1-ff11-4e76-8ebc-a98e8925f6fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{54398f89-0f72-409c-b34c-18c4d2a50f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SkeletalAnimation">
+      <UniqueIdentifier>{68813be3-9b48-456a-a343-8f4571c5904b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CLOD">
+      <UniqueIdentifier>{85796088-fd43-4f68-ba62-cf26aa268640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CLOD">
+      <UniqueIdentifier>{cc19865a-3d84-4eec-9c41-38162cf3fda3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\VDLOD">
+      <UniqueIdentifier>{95e106cd-8327-4a30-a914-a1860de49239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\VDLOD">
+      <UniqueIdentifier>{96a8a615-71b5-4304-9ec0-40b0a6d9bfd0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\assert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Loggers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODTMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SAF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MTF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODLevel.cpp">
+      <Filter>Source Files\DLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODStaticObject.cpp">
+      <Filter>Source Files\DLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODStaticMesh.cpp">
+      <Filter>Source Files\DLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MaterialManager.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AABB.cpp">
+      <Filter>Source Files\BB</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OBB.cpp">
+      <Filter>Source Files\BB</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sphere.cpp">
+      <Filter>Source Files\BB</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletalAnimationStateSet.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletalAnimation.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletalAnimationState.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletonJoint.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletonJointKeyframeSequence.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StaticMesh.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkinnedMesh.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Material.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AmbientLight.cpp">
+      <Filter>Source Files\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DirectionalLight.cpp">
+      <Filter>Source Files\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PointLight.cpp">
+      <Filter>Source Files\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Node.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Spatial.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StaticObject.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletonVisualizer.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Color.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\matrix4.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SRT.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vector2.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vector3.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShaderProgram.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShaderFlags.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletalShader.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LightShader.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mouse.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Keyboard.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Thread.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mutex.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plane.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Frustum.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFileStream.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win_File.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psx_File.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IStream.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Event.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventConverter.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quaternion.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkeletalAnimatedObject.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericGeometry.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL_Renderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MFCommon.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubMesh.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODSMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODSkinnedMesh.cpp">
+      <Filter>Source Files\DLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShaderManager.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DLODSkeletalAnimatedObject.cpp">
+      <Filter>Source Files\DLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlaneGrid.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LogManager.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManager.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RootObject.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IResource.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FPSLogger.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VSplit.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLODStaticMesh.cpp">
+      <Filter>Source Files\CLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLODTMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLODStaticObject.cpp">
+      <Filter>Source Files\CLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLODSMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLODSkinnedMesh.cpp">
+      <Filter>Source Files\CLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLODSkeletalAnimatedObject.cpp">
+      <Filter>Source Files\CLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Skeleton.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VDLODTMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VDLODStaticMesh.cpp">
+      <Filter>Source Files\VDLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VDLODStaticObject.cpp">
+      <Filter>Source Files\VDLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VDLODSkinnedMesh.cpp">
+      <Filter>Source Files\VDLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VDLODSMF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VDLODSkeletalAnimatedObject.cpp">
+      <Filter>Source Files\VDLOD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cylinder.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HeightMapMesh.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HeightMapObject.cpp">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\File.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SCF.cpp">
+      <Filter>Source Files\FileFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModelFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Polyhedron.cpp">
+      <Filter>Source Files\BB</Filter>
+    </ClCompile>
+    <ClCompile Include="src\line3.cpp">
+      <Filter>Source Files\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShadowCasterVolume.cpp">
+      <Filter>Source Files\BB</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Light.cpp">
+      <Filter>Source Files\Light</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\default.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Functor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Loggers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessedScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StringUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HabMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODTMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SAF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MTF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODLevel.h">
+      <Filter>Header Files\DLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODStaticObject.h">
+      <Filter>Header Files\DLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODStaticMesh.h">
+      <Filter>Header Files\DLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUIComponent.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventArgs.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MaterialManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AABB.h">
+      <Filter>Header Files\BB</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OBB.h">
+      <Filter>Header Files\BB</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sphere.h">
+      <Filter>Header Files\BB</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AmbientLight.h">
+      <Filter>Header Files\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DirectionalLight.h">
+      <Filter>Header Files\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PointLight.h">
+      <Filter>Header Files\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletalAnimation.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletalAnimationStateSet.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletalAnimationState.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletonJoint.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletonJointKeyframe.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletonJointKeyframeSequence.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Node.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletalAnimatedObject.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletonVisualizer.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StaticObject.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Spatial.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IBoundingVolume.h">
+      <Filter>Header Files\BB</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Event.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventConverter.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FastDelegate.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FastDelegateBind.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keyboard.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mouse.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Window.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\win_windows.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkinnedMesh.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StaticMesh.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Material.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LightShader.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Shader.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderFlags.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderProgram.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkeletalShader.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Color.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\matrix4.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plane.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\quaternion.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SRT.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SkinVertex.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StaticVertex.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vector2.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vector3.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Frustum.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Thread.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStream.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="src\File.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFileStream.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Texture.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mutex.h">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeometryTask.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpenGL.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpenGL_Renderer.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericGeometry.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LightTask.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MFCommon.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubMesh.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Skeleton.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mapping.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODSMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODSkinnedMesh.h">
+      <Filter>Header Files\DLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderManager.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DLODSkeletalAnimatedObject.h">
+      <Filter>Header Files\DLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlaneGrid.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RootObject.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LogManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Specific_ptr.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IResource.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FPSLogger.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CLODSMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CLODTMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VSplit.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CLODStaticMesh.h">
+      <Filter>Header Files\CLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CLODStaticObject.h">
+      <Filter>Header Files\CLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnifiedManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourceManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CLODSkinnedMesh.h">
+      <Filter>Header Files\CLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CLODSkeletalAnimatedObject.h">
+      <Filter>Header Files\CLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VDLODTMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VDLODStaticMesh.h">
+      <Filter>Header Files\VDLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VDLODStaticObject.h">
+      <Filter>Header Files\VDLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VDLODSkinnedMesh.h">
+      <Filter>Header Files\VDLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VDLODSMF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VDLODSkeletalAnimatedObject.h">
+      <Filter>Header Files\VDLOD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cylinder.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeightMapMesh.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeightMapObject.h">
+      <Filter>Header Files\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SCF.h">
+      <Filter>Header Files\FileFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModelFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Polyhedron.h">
+      <Filter>Header Files\BB</Filter>
+    </ClInclude>
+    <ClInclude Include="src\line3.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShadowCasterVolume.h">
+      <Filter>Header Files\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Light.h">
+      <Filter>Header Files\Light</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
