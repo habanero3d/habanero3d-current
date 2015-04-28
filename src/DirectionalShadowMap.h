@@ -29,6 +29,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include "OpenGL.h"
 #include "matrix4.h"
 #include "vector3.h"
+#include <string>
 
 namespace Habanero
 {

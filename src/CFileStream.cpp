@@ -22,6 +22,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 /*! @file
 @author qfel
 */
+#include "default.h"
 #include "Exception.h"
 #include "CFileStream.h"
 

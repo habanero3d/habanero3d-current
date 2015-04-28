@@ -23,6 +23,8 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 @author qfel
 */
 #pragma once
+#include "default.h"
+
 #define _USE_MATH_DEFINES
 //#undef _MATH_DEFINES_DEFINED //WTF?
 #include <cmath>

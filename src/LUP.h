@@ -22,6 +22,9 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 //author: akuda
 
+#pragma once
+#include "default.h"
+
 namespace Habanero
 {
 

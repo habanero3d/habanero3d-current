@@ -25,6 +25,8 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
 
+#include "default.h"
+
 #define ENUM_(name, decl, ...) \
 	class name { \
 	public: enum EnumType decl {__VA_ARGS__, COUNT}; \

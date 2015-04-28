@@ -1,5 +1,5 @@
 /*
-Copyright 2009-2012 Andrzej Skalski, Piotr Kufel, Piotr Białecki, Michał Żochowski, and Michał Szczepaniak
+Copyright 2009-2011 Andrzej Skalski, Piotr Kufel, Piotr Białecki, Michał Żochowski, and Michał Szczepaniak
 This file is part of Habanero3d.
 
 Habanero3d is free software: you can redistribute it and/or modify
@@ -16,29 +16,19 @@ You should have received a copy of the GNU Lesser General Public License
 along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 
-*/
+ */
 
-#include "assert.h"
-#include "default.h"
+/* ten plik to poligon powstawania nowego renderer'a*/
 
-namespace Habanero
+#include "game.h"
+
+using namespace Habanero;
+
+int main()
 {
-	void assert_func(const char *cond, const char *file, uint line, const char *func)
-	{
-#ifdef WIN32
-		static __declspec(thread) bool nested = false;
-		if (nested)
-			__debugbreak();
-		nested = true;
-		NEWLOG("Assertion failed: %s, at %s:%u(%s)/%s", cond, file, line, func, timestamp);
-		nested = false;
-		__debugbreak();
-#else
+	Game * game = new Game();
+	game->run();
+	delete game;
 
-        //wersja linuxowa
-
-        NEWLOG("Assertion failed: %s, at %s:%u(%s)", cond, file, line, func);
-        __builtin_trap();
-#endif
-	}
+	return 0;
 }

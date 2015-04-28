@@ -23,6 +23,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include <time.h>
 #include <string>
 
+#include "assert.h"
 #include "StringUtil.h"
 #include "IStream.h"
 #include "Logger.h"

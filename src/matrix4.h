@@ -24,6 +24,8 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
 
+#include <string>
+
 namespace Habanero
 {
 	template <typename Real> class matrix3;
