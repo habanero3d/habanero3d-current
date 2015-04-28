@@ -22,6 +22,8 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#include <stddef.h>
+
 #include "default.h"
 #include "StackAllocator.h"
 #include "GeometryDrawTask.h"

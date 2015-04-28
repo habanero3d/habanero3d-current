@@ -20,11 +20,12 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 // author: akuda
 
+#include <cstdio>
+#include "assert.h"
+#include "LogManager.h"
 #include "MemoryManager.h"
 #include "IManagedObject.h"
 #include "ref.h"
-
-#include "cstdio"
 
 namespace Habanero
 {

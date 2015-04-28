@@ -3,6 +3,7 @@
 #include "default.h"
 #include <string>
 #include <map>
+#include "LogManager.h"
 
 namespace Habanero
 {

@@ -23,6 +23,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include "ShaderManager.h"
 #include "default.h"
 #include "OpenGL.h"
+#include "LogManager.h"
 
 namespace Habanero
 {

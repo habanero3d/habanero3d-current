@@ -24,6 +24,8 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
 #include "default.h"
+#include <cstdio>
+#include "assert.h"
 
 #define _USE_MATH_DEFINES
 //#undef _MATH_DEFINES_DEFINED //WTF?

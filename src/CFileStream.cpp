@@ -25,6 +25,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include "default.h"
 #include "Exception.h"
 #include "CFileStream.h"
+#include "assert.h"
 
 namespace Habanero {
 

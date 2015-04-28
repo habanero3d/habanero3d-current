@@ -25,6 +25,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "DirectionalShadowMap.h"
+#include "LogManager.h"
 #include "Singleton.h"
 #include "Renderer.h"
 #include <climits>

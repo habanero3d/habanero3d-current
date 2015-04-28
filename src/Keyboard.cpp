@@ -19,7 +19,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 
-
+#include "assert.h"
 #include "Keyboard.h"
 #include "Event.h"
 

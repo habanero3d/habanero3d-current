@@ -23,6 +23,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 // TODO wypchnąć wysyłanie świateł i palety macierzy poza ciasne pętle
 
 #include "default.h"
+#include "LogManager.h"
 #include <stddef.h>
 
 #include <vector>

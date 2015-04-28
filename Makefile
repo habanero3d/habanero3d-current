@@ -99,17 +99,2105 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named foo
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+foo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 foo
+.PHONY : foo
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-.PHONY : main/fast
+foo/fast:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+.PHONY : foo/fast
+
+CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.o: CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+.PHONY : CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.o
+
+# target to build an object file
+CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+.PHONY : CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+
+CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.i: CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.i
+
+# target to preprocess a source file
+CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+
+CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.s
+
+# target to generate assembly for a file
+CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.o: build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+.PHONY : build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.o
+
+# target to build an object file
+build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+.PHONY : build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+
+build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.i: build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.i
+
+# target to preprocess a source file
+build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+
+build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.s: build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.s
+
+# target to generate assembly for a file
+build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+demo/game.o: demo/game.cpp.o
+.PHONY : demo/game.o
+
+# target to build an object file
+demo/game.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/demo/game.cpp.o
+.PHONY : demo/game.cpp.o
+
+demo/game.i: demo/game.cpp.i
+.PHONY : demo/game.i
+
+# target to preprocess a source file
+demo/game.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/demo/game.cpp.i
+.PHONY : demo/game.cpp.i
+
+demo/game.s: demo/game.cpp.s
+.PHONY : demo/game.s
+
+# target to generate assembly for a file
+demo/game.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/demo/game.cpp.s
+.PHONY : demo/game.cpp.s
+
+demo/main.o: demo/main.cpp.o
+.PHONY : demo/main.o
+
+# target to build an object file
+demo/main.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/demo/main.cpp.o
+.PHONY : demo/main.cpp.o
+
+demo/main.i: demo/main.cpp.i
+.PHONY : demo/main.i
+
+# target to preprocess a source file
+demo/main.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/demo/main.cpp.i
+.PHONY : demo/main.cpp.i
+
+demo/main.s: demo/main.cpp.s
+.PHONY : demo/main.s
+
+# target to generate assembly for a file
+demo/main.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/demo/main.cpp.s
+.PHONY : demo/main.cpp.s
+
+src/AABB.o: src/AABB.cpp.o
+.PHONY : src/AABB.o
+
+# target to build an object file
+src/AABB.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/AABB.cpp.o
+.PHONY : src/AABB.cpp.o
+
+src/AABB.i: src/AABB.cpp.i
+.PHONY : src/AABB.i
+
+# target to preprocess a source file
+src/AABB.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/AABB.cpp.i
+.PHONY : src/AABB.cpp.i
+
+src/AABB.s: src/AABB.cpp.s
+.PHONY : src/AABB.s
+
+# target to generate assembly for a file
+src/AABB.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/AABB.cpp.s
+.PHONY : src/AABB.cpp.s
+
+src/AmbientLight.o: src/AmbientLight.cpp.o
+.PHONY : src/AmbientLight.o
+
+# target to build an object file
+src/AmbientLight.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/AmbientLight.cpp.o
+.PHONY : src/AmbientLight.cpp.o
+
+src/AmbientLight.i: src/AmbientLight.cpp.i
+.PHONY : src/AmbientLight.i
+
+# target to preprocess a source file
+src/AmbientLight.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/AmbientLight.cpp.i
+.PHONY : src/AmbientLight.cpp.i
+
+src/AmbientLight.s: src/AmbientLight.cpp.s
+.PHONY : src/AmbientLight.s
+
+# target to generate assembly for a file
+src/AmbientLight.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/AmbientLight.cpp.s
+.PHONY : src/AmbientLight.cpp.s
+
+src/CFileStream.o: src/CFileStream.cpp.o
+.PHONY : src/CFileStream.o
+
+# target to build an object file
+src/CFileStream.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/CFileStream.cpp.o
+.PHONY : src/CFileStream.cpp.o
+
+src/CFileStream.i: src/CFileStream.cpp.i
+.PHONY : src/CFileStream.i
+
+# target to preprocess a source file
+src/CFileStream.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/CFileStream.cpp.i
+.PHONY : src/CFileStream.cpp.i
+
+src/CFileStream.s: src/CFileStream.cpp.s
+.PHONY : src/CFileStream.s
+
+# target to generate assembly for a file
+src/CFileStream.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/CFileStream.cpp.s
+.PHONY : src/CFileStream.cpp.s
+
+src/Camera.o: src/Camera.cpp.o
+.PHONY : src/Camera.o
+
+# target to build an object file
+src/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
+
+src/Camera.i: src/Camera.cpp.i
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
+src/Color.o: src/Color.cpp.o
+.PHONY : src/Color.o
+
+# target to build an object file
+src/Color.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Color.cpp.o
+.PHONY : src/Color.cpp.o
+
+src/Color.i: src/Color.cpp.i
+.PHONY : src/Color.i
+
+# target to preprocess a source file
+src/Color.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Color.cpp.i
+.PHONY : src/Color.cpp.i
+
+src/Color.s: src/Color.cpp.s
+.PHONY : src/Color.s
+
+# target to generate assembly for a file
+src/Color.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Color.cpp.s
+.PHONY : src/Color.cpp.s
+
+src/CullingVolumesSet.o: src/CullingVolumesSet.cpp.o
+.PHONY : src/CullingVolumesSet.o
+
+# target to build an object file
+src/CullingVolumesSet.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/CullingVolumesSet.cpp.o
+.PHONY : src/CullingVolumesSet.cpp.o
+
+src/CullingVolumesSet.i: src/CullingVolumesSet.cpp.i
+.PHONY : src/CullingVolumesSet.i
+
+# target to preprocess a source file
+src/CullingVolumesSet.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/CullingVolumesSet.cpp.i
+.PHONY : src/CullingVolumesSet.cpp.i
+
+src/CullingVolumesSet.s: src/CullingVolumesSet.cpp.s
+.PHONY : src/CullingVolumesSet.s
+
+# target to generate assembly for a file
+src/CullingVolumesSet.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/CullingVolumesSet.cpp.s
+.PHONY : src/CullingVolumesSet.cpp.s
+
+src/DirectionalLight.o: src/DirectionalLight.cpp.o
+.PHONY : src/DirectionalLight.o
+
+# target to build an object file
+src/DirectionalLight.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/DirectionalLight.cpp.o
+.PHONY : src/DirectionalLight.cpp.o
+
+src/DirectionalLight.i: src/DirectionalLight.cpp.i
+.PHONY : src/DirectionalLight.i
+
+# target to preprocess a source file
+src/DirectionalLight.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/DirectionalLight.cpp.i
+.PHONY : src/DirectionalLight.cpp.i
+
+src/DirectionalLight.s: src/DirectionalLight.cpp.s
+.PHONY : src/DirectionalLight.s
+
+# target to generate assembly for a file
+src/DirectionalLight.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/DirectionalLight.cpp.s
+.PHONY : src/DirectionalLight.cpp.s
+
+src/DirectionalShadowMap.o: src/DirectionalShadowMap.cpp.o
+.PHONY : src/DirectionalShadowMap.o
+
+# target to build an object file
+src/DirectionalShadowMap.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/DirectionalShadowMap.cpp.o
+.PHONY : src/DirectionalShadowMap.cpp.o
+
+src/DirectionalShadowMap.i: src/DirectionalShadowMap.cpp.i
+.PHONY : src/DirectionalShadowMap.i
+
+# target to preprocess a source file
+src/DirectionalShadowMap.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/DirectionalShadowMap.cpp.i
+.PHONY : src/DirectionalShadowMap.cpp.i
+
+src/DirectionalShadowMap.s: src/DirectionalShadowMap.cpp.s
+.PHONY : src/DirectionalShadowMap.s
+
+# target to generate assembly for a file
+src/DirectionalShadowMap.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/DirectionalShadowMap.cpp.s
+.PHONY : src/DirectionalShadowMap.cpp.s
+
+src/Event.o: src/Event.cpp.o
+.PHONY : src/Event.o
+
+# target to build an object file
+src/Event.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Event.cpp.o
+.PHONY : src/Event.cpp.o
+
+src/Event.i: src/Event.cpp.i
+.PHONY : src/Event.i
+
+# target to preprocess a source file
+src/Event.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Event.cpp.i
+.PHONY : src/Event.cpp.i
+
+src/Event.s: src/Event.cpp.s
+.PHONY : src/Event.s
+
+# target to generate assembly for a file
+src/Event.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Event.cpp.s
+.PHONY : src/Event.cpp.s
+
+src/EventConverter.o: src/EventConverter.cpp.o
+.PHONY : src/EventConverter.o
+
+# target to build an object file
+src/EventConverter.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/EventConverter.cpp.o
+.PHONY : src/EventConverter.cpp.o
+
+src/EventConverter.i: src/EventConverter.cpp.i
+.PHONY : src/EventConverter.i
+
+# target to preprocess a source file
+src/EventConverter.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/EventConverter.cpp.i
+.PHONY : src/EventConverter.cpp.i
+
+src/EventConverter.s: src/EventConverter.cpp.s
+.PHONY : src/EventConverter.s
+
+# target to generate assembly for a file
+src/EventConverter.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/EventConverter.cpp.s
+.PHONY : src/EventConverter.cpp.s
+
+src/Exception.o: src/Exception.cpp.o
+.PHONY : src/Exception.o
+
+# target to build an object file
+src/Exception.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Exception.cpp.o
+.PHONY : src/Exception.cpp.o
+
+src/Exception.i: src/Exception.cpp.i
+.PHONY : src/Exception.i
+
+# target to preprocess a source file
+src/Exception.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Exception.cpp.i
+.PHONY : src/Exception.cpp.i
+
+src/Exception.s: src/Exception.cpp.s
+.PHONY : src/Exception.s
+
+# target to generate assembly for a file
+src/Exception.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Exception.cpp.s
+.PHONY : src/Exception.cpp.s
+
+src/File.o: src/File.cpp.o
+.PHONY : src/File.o
+
+# target to build an object file
+src/File.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/File.cpp.o
+.PHONY : src/File.cpp.o
+
+src/File.i: src/File.cpp.i
+.PHONY : src/File.i
+
+# target to preprocess a source file
+src/File.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/File.cpp.i
+.PHONY : src/File.cpp.i
+
+src/File.s: src/File.cpp.s
+.PHONY : src/File.s
+
+# target to generate assembly for a file
+src/File.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/File.cpp.s
+.PHONY : src/File.cpp.s
+
+src/FrameDescription.o: src/FrameDescription.cpp.o
+.PHONY : src/FrameDescription.o
+
+# target to build an object file
+src/FrameDescription.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/FrameDescription.cpp.o
+.PHONY : src/FrameDescription.cpp.o
+
+src/FrameDescription.i: src/FrameDescription.cpp.i
+.PHONY : src/FrameDescription.i
+
+# target to preprocess a source file
+src/FrameDescription.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/FrameDescription.cpp.i
+.PHONY : src/FrameDescription.cpp.i
+
+src/FrameDescription.s: src/FrameDescription.cpp.s
+.PHONY : src/FrameDescription.s
+
+# target to generate assembly for a file
+src/FrameDescription.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/FrameDescription.cpp.s
+.PHONY : src/FrameDescription.cpp.s
+
+src/Frustum.o: src/Frustum.cpp.o
+.PHONY : src/Frustum.o
+
+# target to build an object file
+src/Frustum.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Frustum.cpp.o
+.PHONY : src/Frustum.cpp.o
+
+src/Frustum.i: src/Frustum.cpp.i
+.PHONY : src/Frustum.i
+
+# target to preprocess a source file
+src/Frustum.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Frustum.cpp.i
+.PHONY : src/Frustum.cpp.i
+
+src/Frustum.s: src/Frustum.cpp.s
+.PHONY : src/Frustum.s
+
+# target to generate assembly for a file
+src/Frustum.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Frustum.cpp.s
+.PHONY : src/Frustum.cpp.s
+
+src/GenericGeometry.o: src/GenericGeometry.cpp.o
+.PHONY : src/GenericGeometry.o
+
+# target to build an object file
+src/GenericGeometry.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/GenericGeometry.cpp.o
+.PHONY : src/GenericGeometry.cpp.o
+
+src/GenericGeometry.i: src/GenericGeometry.cpp.i
+.PHONY : src/GenericGeometry.i
+
+# target to preprocess a source file
+src/GenericGeometry.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/GenericGeometry.cpp.i
+.PHONY : src/GenericGeometry.cpp.i
+
+src/GenericGeometry.s: src/GenericGeometry.cpp.s
+.PHONY : src/GenericGeometry.s
+
+# target to generate assembly for a file
+src/GenericGeometry.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/GenericGeometry.cpp.s
+.PHONY : src/GenericGeometry.cpp.s
+
+src/GenericMemoryOrdersGenerator.o: src/GenericMemoryOrdersGenerator.cpp.o
+.PHONY : src/GenericMemoryOrdersGenerator.o
+
+# target to build an object file
+src/GenericMemoryOrdersGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/GenericMemoryOrdersGenerator.cpp.o
+.PHONY : src/GenericMemoryOrdersGenerator.cpp.o
+
+src/GenericMemoryOrdersGenerator.i: src/GenericMemoryOrdersGenerator.cpp.i
+.PHONY : src/GenericMemoryOrdersGenerator.i
+
+# target to preprocess a source file
+src/GenericMemoryOrdersGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/GenericMemoryOrdersGenerator.cpp.i
+.PHONY : src/GenericMemoryOrdersGenerator.cpp.i
+
+src/GenericMemoryOrdersGenerator.s: src/GenericMemoryOrdersGenerator.cpp.s
+.PHONY : src/GenericMemoryOrdersGenerator.s
+
+# target to generate assembly for a file
+src/GenericMemoryOrdersGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/GenericMemoryOrdersGenerator.cpp.s
+.PHONY : src/GenericMemoryOrdersGenerator.cpp.s
+
+src/HMF.o: src/HMF.cpp.o
+.PHONY : src/HMF.o
+
+# target to build an object file
+src/HMF.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HMF.cpp.o
+.PHONY : src/HMF.cpp.o
+
+src/HMF.i: src/HMF.cpp.i
+.PHONY : src/HMF.i
+
+# target to preprocess a source file
+src/HMF.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HMF.cpp.i
+.PHONY : src/HMF.cpp.i
+
+src/HMF.s: src/HMF.cpp.s
+.PHONY : src/HMF.s
+
+# target to generate assembly for a file
+src/HMF.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HMF.cpp.s
+.PHONY : src/HMF.cpp.s
+
+src/HeightMapMesh.o: src/HeightMapMesh.cpp.o
+.PHONY : src/HeightMapMesh.o
+
+# target to build an object file
+src/HeightMapMesh.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HeightMapMesh.cpp.o
+.PHONY : src/HeightMapMesh.cpp.o
+
+src/HeightMapMesh.i: src/HeightMapMesh.cpp.i
+.PHONY : src/HeightMapMesh.i
+
+# target to preprocess a source file
+src/HeightMapMesh.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HeightMapMesh.cpp.i
+.PHONY : src/HeightMapMesh.cpp.i
+
+src/HeightMapMesh.s: src/HeightMapMesh.cpp.s
+.PHONY : src/HeightMapMesh.s
+
+# target to generate assembly for a file
+src/HeightMapMesh.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HeightMapMesh.cpp.s
+.PHONY : src/HeightMapMesh.cpp.s
+
+src/HeightMapObject.o: src/HeightMapObject.cpp.o
+.PHONY : src/HeightMapObject.o
+
+# target to build an object file
+src/HeightMapObject.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HeightMapObject.cpp.o
+.PHONY : src/HeightMapObject.cpp.o
+
+src/HeightMapObject.i: src/HeightMapObject.cpp.i
+.PHONY : src/HeightMapObject.i
+
+# target to preprocess a source file
+src/HeightMapObject.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HeightMapObject.cpp.i
+.PHONY : src/HeightMapObject.cpp.i
+
+src/HeightMapObject.s: src/HeightMapObject.cpp.s
+.PHONY : src/HeightMapObject.s
+
+# target to generate assembly for a file
+src/HeightMapObject.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/HeightMapObject.cpp.s
+.PHONY : src/HeightMapObject.cpp.s
+
+src/IDrawTask.o: src/IDrawTask.cpp.o
+.PHONY : src/IDrawTask.o
+
+# target to build an object file
+src/IDrawTask.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IDrawTask.cpp.o
+.PHONY : src/IDrawTask.cpp.o
+
+src/IDrawTask.i: src/IDrawTask.cpp.i
+.PHONY : src/IDrawTask.i
+
+# target to preprocess a source file
+src/IDrawTask.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IDrawTask.cpp.i
+.PHONY : src/IDrawTask.cpp.i
+
+src/IDrawTask.s: src/IDrawTask.cpp.s
+.PHONY : src/IDrawTask.s
+
+# target to generate assembly for a file
+src/IDrawTask.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IDrawTask.cpp.s
+.PHONY : src/IDrawTask.cpp.s
+
+src/IManagedObject.o: src/IManagedObject.cpp.o
+.PHONY : src/IManagedObject.o
+
+# target to build an object file
+src/IManagedObject.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IManagedObject.cpp.o
+.PHONY : src/IManagedObject.cpp.o
+
+src/IManagedObject.i: src/IManagedObject.cpp.i
+.PHONY : src/IManagedObject.i
+
+# target to preprocess a source file
+src/IManagedObject.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IManagedObject.cpp.i
+.PHONY : src/IManagedObject.cpp.i
+
+src/IManagedObject.s: src/IManagedObject.cpp.s
+.PHONY : src/IManagedObject.s
+
+# target to generate assembly for a file
+src/IManagedObject.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IManagedObject.cpp.s
+.PHONY : src/IManagedObject.cpp.s
+
+src/IRenderTarget.o: src/IRenderTarget.cpp.o
+.PHONY : src/IRenderTarget.o
+
+# target to build an object file
+src/IRenderTarget.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IRenderTarget.cpp.o
+.PHONY : src/IRenderTarget.cpp.o
+
+src/IRenderTarget.i: src/IRenderTarget.cpp.i
+.PHONY : src/IRenderTarget.i
+
+# target to preprocess a source file
+src/IRenderTarget.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IRenderTarget.cpp.i
+.PHONY : src/IRenderTarget.cpp.i
+
+src/IRenderTarget.s: src/IRenderTarget.cpp.s
+.PHONY : src/IRenderTarget.s
+
+# target to generate assembly for a file
+src/IRenderTarget.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IRenderTarget.cpp.s
+.PHONY : src/IRenderTarget.cpp.s
+
+src/IResource.o: src/IResource.cpp.o
+.PHONY : src/IResource.o
+
+# target to build an object file
+src/IResource.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IResource.cpp.o
+.PHONY : src/IResource.cpp.o
+
+src/IResource.i: src/IResource.cpp.i
+.PHONY : src/IResource.i
+
+# target to preprocess a source file
+src/IResource.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IResource.cpp.i
+.PHONY : src/IResource.cpp.i
+
+src/IResource.s: src/IResource.cpp.s
+.PHONY : src/IResource.s
+
+# target to generate assembly for a file
+src/IResource.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IResource.cpp.s
+.PHONY : src/IResource.cpp.s
+
+src/IStream.o: src/IStream.cpp.o
+.PHONY : src/IStream.o
+
+# target to build an object file
+src/IStream.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IStream.cpp.o
+.PHONY : src/IStream.cpp.o
+
+src/IStream.i: src/IStream.cpp.i
+.PHONY : src/IStream.i
+
+# target to preprocess a source file
+src/IStream.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IStream.cpp.i
+.PHONY : src/IStream.cpp.i
+
+src/IStream.s: src/IStream.cpp.s
+.PHONY : src/IStream.s
+
+# target to generate assembly for a file
+src/IStream.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/IStream.cpp.s
+.PHONY : src/IStream.cpp.s
+
+src/Keyboard.o: src/Keyboard.cpp.o
+.PHONY : src/Keyboard.o
+
+# target to build an object file
+src/Keyboard.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Keyboard.cpp.o
+.PHONY : src/Keyboard.cpp.o
+
+src/Keyboard.i: src/Keyboard.cpp.i
+.PHONY : src/Keyboard.i
+
+# target to preprocess a source file
+src/Keyboard.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Keyboard.cpp.i
+.PHONY : src/Keyboard.cpp.i
+
+src/Keyboard.s: src/Keyboard.cpp.s
+.PHONY : src/Keyboard.s
+
+# target to generate assembly for a file
+src/Keyboard.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Keyboard.cpp.s
+.PHONY : src/Keyboard.cpp.s
+
+src/LUP.o: src/LUP.cpp.o
+.PHONY : src/LUP.o
+
+# target to build an object file
+src/LUP.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LUP.cpp.o
+.PHONY : src/LUP.cpp.o
+
+src/LUP.i: src/LUP.cpp.i
+.PHONY : src/LUP.i
+
+# target to preprocess a source file
+src/LUP.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LUP.cpp.i
+.PHONY : src/LUP.cpp.i
+
+src/LUP.s: src/LUP.cpp.s
+.PHONY : src/LUP.s
+
+# target to generate assembly for a file
+src/LUP.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LUP.cpp.s
+.PHONY : src/LUP.cpp.s
+
+src/Light.o: src/Light.cpp.o
+.PHONY : src/Light.o
+
+# target to build an object file
+src/Light.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Light.cpp.o
+.PHONY : src/Light.cpp.o
+
+src/Light.i: src/Light.cpp.i
+.PHONY : src/Light.i
+
+# target to preprocess a source file
+src/Light.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Light.cpp.i
+.PHONY : src/Light.cpp.i
+
+src/Light.s: src/Light.cpp.s
+.PHONY : src/Light.s
+
+# target to generate assembly for a file
+src/Light.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Light.cpp.s
+.PHONY : src/Light.cpp.s
+
+src/LightShader.o: src/LightShader.cpp.o
+.PHONY : src/LightShader.o
+
+# target to build an object file
+src/LightShader.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LightShader.cpp.o
+.PHONY : src/LightShader.cpp.o
+
+src/LightShader.i: src/LightShader.cpp.i
+.PHONY : src/LightShader.i
+
+# target to preprocess a source file
+src/LightShader.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LightShader.cpp.i
+.PHONY : src/LightShader.cpp.i
+
+src/LightShader.s: src/LightShader.cpp.s
+.PHONY : src/LightShader.s
+
+# target to generate assembly for a file
+src/LightShader.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LightShader.cpp.s
+.PHONY : src/LightShader.cpp.s
+
+src/LogManager.o: src/LogManager.cpp.o
+.PHONY : src/LogManager.o
+
+# target to build an object file
+src/LogManager.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LogManager.cpp.o
+.PHONY : src/LogManager.cpp.o
+
+src/LogManager.i: src/LogManager.cpp.i
+.PHONY : src/LogManager.i
+
+# target to preprocess a source file
+src/LogManager.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LogManager.cpp.i
+.PHONY : src/LogManager.cpp.i
+
+src/LogManager.s: src/LogManager.cpp.s
+.PHONY : src/LogManager.s
+
+# target to generate assembly for a file
+src/LogManager.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/LogManager.cpp.s
+.PHONY : src/LogManager.cpp.s
+
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
+src/MFCommon.o: src/MFCommon.cpp.o
+.PHONY : src/MFCommon.o
+
+# target to build an object file
+src/MFCommon.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MFCommon.cpp.o
+.PHONY : src/MFCommon.cpp.o
+
+src/MFCommon.i: src/MFCommon.cpp.i
+.PHONY : src/MFCommon.i
+
+# target to preprocess a source file
+src/MFCommon.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MFCommon.cpp.i
+.PHONY : src/MFCommon.cpp.i
+
+src/MFCommon.s: src/MFCommon.cpp.s
+.PHONY : src/MFCommon.s
+
+# target to generate assembly for a file
+src/MFCommon.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MFCommon.cpp.s
+.PHONY : src/MFCommon.cpp.s
+
+src/MTF.o: src/MTF.cpp.o
+.PHONY : src/MTF.o
+
+# target to build an object file
+src/MTF.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MTF.cpp.o
+.PHONY : src/MTF.cpp.o
+
+src/MTF.i: src/MTF.cpp.i
+.PHONY : src/MTF.i
+
+# target to preprocess a source file
+src/MTF.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MTF.cpp.i
+.PHONY : src/MTF.cpp.i
+
+src/MTF.s: src/MTF.cpp.s
+.PHONY : src/MTF.s
+
+# target to generate assembly for a file
+src/MTF.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MTF.cpp.s
+.PHONY : src/MTF.cpp.s
+
+src/Material.o: src/Material.cpp.o
+.PHONY : src/Material.o
+
+# target to build an object file
+src/Material.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Material.cpp.o
+.PHONY : src/Material.cpp.o
+
+src/Material.i: src/Material.cpp.i
+.PHONY : src/Material.i
+
+# target to preprocess a source file
+src/Material.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Material.cpp.i
+.PHONY : src/Material.cpp.i
+
+src/Material.s: src/Material.cpp.s
+.PHONY : src/Material.s
+
+# target to generate assembly for a file
+src/Material.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Material.cpp.s
+.PHONY : src/Material.cpp.s
+
+src/MemoryManager.o: src/MemoryManager.cpp.o
+.PHONY : src/MemoryManager.o
+
+# target to build an object file
+src/MemoryManager.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MemoryManager.cpp.o
+.PHONY : src/MemoryManager.cpp.o
+
+src/MemoryManager.i: src/MemoryManager.cpp.i
+.PHONY : src/MemoryManager.i
+
+# target to preprocess a source file
+src/MemoryManager.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MemoryManager.cpp.i
+.PHONY : src/MemoryManager.cpp.i
+
+src/MemoryManager.s: src/MemoryManager.cpp.s
+.PHONY : src/MemoryManager.s
+
+# target to generate assembly for a file
+src/MemoryManager.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/MemoryManager.cpp.s
+.PHONY : src/MemoryManager.cpp.s
+
+src/ModelFactory.o: src/ModelFactory.cpp.o
+.PHONY : src/ModelFactory.o
+
+# target to build an object file
+src/ModelFactory.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ModelFactory.cpp.o
+.PHONY : src/ModelFactory.cpp.o
+
+src/ModelFactory.i: src/ModelFactory.cpp.i
+.PHONY : src/ModelFactory.i
+
+# target to preprocess a source file
+src/ModelFactory.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ModelFactory.cpp.i
+.PHONY : src/ModelFactory.cpp.i
+
+src/ModelFactory.s: src/ModelFactory.cpp.s
+.PHONY : src/ModelFactory.s
+
+# target to generate assembly for a file
+src/ModelFactory.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ModelFactory.cpp.s
+.PHONY : src/ModelFactory.cpp.s
+
+src/Mouse.o: src/Mouse.cpp.o
+.PHONY : src/Mouse.o
+
+# target to build an object file
+src/Mouse.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Mouse.cpp.o
+.PHONY : src/Mouse.cpp.o
+
+src/Mouse.i: src/Mouse.cpp.i
+.PHONY : src/Mouse.i
+
+# target to preprocess a source file
+src/Mouse.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Mouse.cpp.i
+.PHONY : src/Mouse.cpp.i
+
+src/Mouse.s: src/Mouse.cpp.s
+.PHONY : src/Mouse.s
+
+# target to generate assembly for a file
+src/Mouse.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Mouse.cpp.s
+.PHONY : src/Mouse.cpp.s
+
+src/Node.o: src/Node.cpp.o
+.PHONY : src/Node.o
+
+# target to build an object file
+src/Node.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Node.cpp.o
+.PHONY : src/Node.cpp.o
+
+src/Node.i: src/Node.cpp.i
+.PHONY : src/Node.i
+
+# target to preprocess a source file
+src/Node.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Node.cpp.i
+.PHONY : src/Node.cpp.i
+
+src/Node.s: src/Node.cpp.s
+.PHONY : src/Node.s
+
+# target to generate assembly for a file
+src/Node.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Node.cpp.s
+.PHONY : src/Node.cpp.s
+
+src/Pick.o: src/Pick.cpp.o
+.PHONY : src/Pick.o
+
+# target to build an object file
+src/Pick.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Pick.cpp.o
+.PHONY : src/Pick.cpp.o
+
+src/Pick.i: src/Pick.cpp.i
+.PHONY : src/Pick.i
+
+# target to preprocess a source file
+src/Pick.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Pick.cpp.i
+.PHONY : src/Pick.cpp.i
+
+src/Pick.s: src/Pick.cpp.s
+.PHONY : src/Pick.s
+
+# target to generate assembly for a file
+src/Pick.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Pick.cpp.s
+.PHONY : src/Pick.cpp.s
+
+src/PointLight.o: src/PointLight.cpp.o
+.PHONY : src/PointLight.o
+
+# target to build an object file
+src/PointLight.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/PointLight.cpp.o
+.PHONY : src/PointLight.cpp.o
+
+src/PointLight.i: src/PointLight.cpp.i
+.PHONY : src/PointLight.i
+
+# target to preprocess a source file
+src/PointLight.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/PointLight.cpp.i
+.PHONY : src/PointLight.cpp.i
+
+src/PointLight.s: src/PointLight.cpp.s
+.PHONY : src/PointLight.s
+
+# target to generate assembly for a file
+src/PointLight.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/PointLight.cpp.s
+.PHONY : src/PointLight.cpp.s
+
+src/Polyhedron.o: src/Polyhedron.cpp.o
+.PHONY : src/Polyhedron.o
+
+# target to build an object file
+src/Polyhedron.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Polyhedron.cpp.o
+.PHONY : src/Polyhedron.cpp.o
+
+src/Polyhedron.i: src/Polyhedron.cpp.i
+.PHONY : src/Polyhedron.i
+
+# target to preprocess a source file
+src/Polyhedron.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Polyhedron.cpp.i
+.PHONY : src/Polyhedron.cpp.i
+
+src/Polyhedron.s: src/Polyhedron.cpp.s
+.PHONY : src/Polyhedron.s
+
+# target to generate assembly for a file
+src/Polyhedron.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Polyhedron.cpp.s
+.PHONY : src/Polyhedron.cpp.s
+
+src/RT.o: src/RT.cpp.o
+.PHONY : src/RT.o
+
+# target to build an object file
+src/RT.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RT.cpp.o
+.PHONY : src/RT.cpp.o
+
+src/RT.i: src/RT.cpp.i
+.PHONY : src/RT.i
+
+# target to preprocess a source file
+src/RT.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RT.cpp.i
+.PHONY : src/RT.cpp.i
+
+src/RT.s: src/RT.cpp.s
+.PHONY : src/RT.s
+
+# target to generate assembly for a file
+src/RT.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RT.cpp.s
+.PHONY : src/RT.cpp.s
+
+src/Renderer.o: src/Renderer.cpp.o
+.PHONY : src/Renderer.o
+
+# target to build an object file
+src/Renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Renderer.cpp.o
+.PHONY : src/Renderer.cpp.o
+
+src/Renderer.i: src/Renderer.cpp.i
+.PHONY : src/Renderer.i
+
+# target to preprocess a source file
+src/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Renderer.cpp.i
+.PHONY : src/Renderer.cpp.i
+
+src/Renderer.s: src/Renderer.cpp.s
+.PHONY : src/Renderer.s
+
+# target to generate assembly for a file
+src/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Renderer.cpp.s
+.PHONY : src/Renderer.cpp.s
+
+src/RendererLightSetup.o: src/RendererLightSetup.cpp.o
+.PHONY : src/RendererLightSetup.o
+
+# target to build an object file
+src/RendererLightSetup.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RendererLightSetup.cpp.o
+.PHONY : src/RendererLightSetup.cpp.o
+
+src/RendererLightSetup.i: src/RendererLightSetup.cpp.i
+.PHONY : src/RendererLightSetup.i
+
+# target to preprocess a source file
+src/RendererLightSetup.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RendererLightSetup.cpp.i
+.PHONY : src/RendererLightSetup.cpp.i
+
+src/RendererLightSetup.s: src/RendererLightSetup.cpp.s
+.PHONY : src/RendererLightSetup.s
+
+# target to generate assembly for a file
+src/RendererLightSetup.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RendererLightSetup.cpp.s
+.PHONY : src/RendererLightSetup.cpp.s
+
+src/RendererSkeletonSetup.o: src/RendererSkeletonSetup.cpp.o
+.PHONY : src/RendererSkeletonSetup.o
+
+# target to build an object file
+src/RendererSkeletonSetup.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RendererSkeletonSetup.cpp.o
+.PHONY : src/RendererSkeletonSetup.cpp.o
+
+src/RendererSkeletonSetup.i: src/RendererSkeletonSetup.cpp.i
+.PHONY : src/RendererSkeletonSetup.i
+
+# target to preprocess a source file
+src/RendererSkeletonSetup.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RendererSkeletonSetup.cpp.i
+.PHONY : src/RendererSkeletonSetup.cpp.i
+
+src/RendererSkeletonSetup.s: src/RendererSkeletonSetup.cpp.s
+.PHONY : src/RendererSkeletonSetup.s
+
+# target to generate assembly for a file
+src/RendererSkeletonSetup.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RendererSkeletonSetup.cpp.s
+.PHONY : src/RendererSkeletonSetup.cpp.s
+
+src/ResourceManager.o: src/ResourceManager.cpp.o
+.PHONY : src/ResourceManager.o
+
+# target to build an object file
+src/ResourceManager.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ResourceManager.cpp.o
+.PHONY : src/ResourceManager.cpp.o
+
+src/ResourceManager.i: src/ResourceManager.cpp.i
+.PHONY : src/ResourceManager.i
+
+# target to preprocess a source file
+src/ResourceManager.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ResourceManager.cpp.i
+.PHONY : src/ResourceManager.cpp.i
+
+src/ResourceManager.s: src/ResourceManager.cpp.s
+.PHONY : src/ResourceManager.s
+
+# target to generate assembly for a file
+src/ResourceManager.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ResourceManager.cpp.s
+.PHONY : src/ResourceManager.cpp.s
+
+src/RootObject.o: src/RootObject.cpp.o
+.PHONY : src/RootObject.o
+
+# target to build an object file
+src/RootObject.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RootObject.cpp.o
+.PHONY : src/RootObject.cpp.o
+
+src/RootObject.i: src/RootObject.cpp.i
+.PHONY : src/RootObject.i
+
+# target to preprocess a source file
+src/RootObject.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RootObject.cpp.i
+.PHONY : src/RootObject.cpp.i
+
+src/RootObject.s: src/RootObject.cpp.s
+.PHONY : src/RootObject.s
+
+# target to generate assembly for a file
+src/RootObject.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/RootObject.cpp.s
+.PHONY : src/RootObject.cpp.s
+
+src/SAF.o: src/SAF.cpp.o
+.PHONY : src/SAF.o
+
+# target to build an object file
+src/SAF.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SAF.cpp.o
+.PHONY : src/SAF.cpp.o
+
+src/SAF.i: src/SAF.cpp.i
+.PHONY : src/SAF.i
+
+# target to preprocess a source file
+src/SAF.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SAF.cpp.i
+.PHONY : src/SAF.cpp.i
+
+src/SAF.s: src/SAF.cpp.s
+.PHONY : src/SAF.s
+
+# target to generate assembly for a file
+src/SAF.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SAF.cpp.s
+.PHONY : src/SAF.cpp.s
+
+src/SCF.o: src/SCF.cpp.o
+.PHONY : src/SCF.o
+
+# target to build an object file
+src/SCF.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SCF.cpp.o
+.PHONY : src/SCF.cpp.o
+
+src/SCF.i: src/SCF.cpp.i
+.PHONY : src/SCF.i
+
+# target to preprocess a source file
+src/SCF.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SCF.cpp.i
+.PHONY : src/SCF.cpp.i
+
+src/SCF.s: src/SCF.cpp.s
+.PHONY : src/SCF.s
+
+# target to generate assembly for a file
+src/SCF.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SCF.cpp.s
+.PHONY : src/SCF.cpp.s
+
+src/SMF.o: src/SMF.cpp.o
+.PHONY : src/SMF.o
+
+# target to build an object file
+src/SMF.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SMF.cpp.o
+.PHONY : src/SMF.cpp.o
+
+src/SMF.i: src/SMF.cpp.i
+.PHONY : src/SMF.i
+
+# target to preprocess a source file
+src/SMF.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SMF.cpp.i
+.PHONY : src/SMF.cpp.i
+
+src/SMF.s: src/SMF.cpp.s
+.PHONY : src/SMF.s
+
+# target to generate assembly for a file
+src/SMF.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SMF.cpp.s
+.PHONY : src/SMF.cpp.s
+
+src/SRT.o: src/SRT.cpp.o
+.PHONY : src/SRT.o
+
+# target to build an object file
+src/SRT.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SRT.cpp.o
+.PHONY : src/SRT.cpp.o
+
+src/SRT.i: src/SRT.cpp.i
+.PHONY : src/SRT.i
+
+# target to preprocess a source file
+src/SRT.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SRT.cpp.i
+.PHONY : src/SRT.cpp.i
+
+src/SRT.s: src/SRT.cpp.s
+.PHONY : src/SRT.s
+
+# target to generate assembly for a file
+src/SRT.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SRT.cpp.s
+.PHONY : src/SRT.cpp.s
+
+src/ShaderFlags.o: src/ShaderFlags.cpp.o
+.PHONY : src/ShaderFlags.o
+
+# target to build an object file
+src/ShaderFlags.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderFlags.cpp.o
+.PHONY : src/ShaderFlags.cpp.o
+
+src/ShaderFlags.i: src/ShaderFlags.cpp.i
+.PHONY : src/ShaderFlags.i
+
+# target to preprocess a source file
+src/ShaderFlags.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderFlags.cpp.i
+.PHONY : src/ShaderFlags.cpp.i
+
+src/ShaderFlags.s: src/ShaderFlags.cpp.s
+.PHONY : src/ShaderFlags.s
+
+# target to generate assembly for a file
+src/ShaderFlags.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderFlags.cpp.s
+.PHONY : src/ShaderFlags.cpp.s
+
+src/ShaderManager.o: src/ShaderManager.cpp.o
+.PHONY : src/ShaderManager.o
+
+# target to build an object file
+src/ShaderManager.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderManager.cpp.o
+.PHONY : src/ShaderManager.cpp.o
+
+src/ShaderManager.i: src/ShaderManager.cpp.i
+.PHONY : src/ShaderManager.i
+
+# target to preprocess a source file
+src/ShaderManager.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderManager.cpp.i
+.PHONY : src/ShaderManager.cpp.i
+
+src/ShaderManager.s: src/ShaderManager.cpp.s
+.PHONY : src/ShaderManager.s
+
+# target to generate assembly for a file
+src/ShaderManager.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderManager.cpp.s
+.PHONY : src/ShaderManager.cpp.s
+
+src/ShaderProgram.o: src/ShaderProgram.cpp.o
+.PHONY : src/ShaderProgram.o
+
+# target to build an object file
+src/ShaderProgram.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderProgram.cpp.o
+.PHONY : src/ShaderProgram.cpp.o
+
+src/ShaderProgram.i: src/ShaderProgram.cpp.i
+.PHONY : src/ShaderProgram.i
+
+# target to preprocess a source file
+src/ShaderProgram.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderProgram.cpp.i
+.PHONY : src/ShaderProgram.cpp.i
+
+src/ShaderProgram.s: src/ShaderProgram.cpp.s
+.PHONY : src/ShaderProgram.s
+
+# target to generate assembly for a file
+src/ShaderProgram.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ShaderProgram.cpp.s
+.PHONY : src/ShaderProgram.cpp.s
+
+src/SkeletalAnimatedObject.o: src/SkeletalAnimatedObject.cpp.o
+.PHONY : src/SkeletalAnimatedObject.o
+
+# target to build an object file
+src/SkeletalAnimatedObject.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimatedObject.cpp.o
+.PHONY : src/SkeletalAnimatedObject.cpp.o
+
+src/SkeletalAnimatedObject.i: src/SkeletalAnimatedObject.cpp.i
+.PHONY : src/SkeletalAnimatedObject.i
+
+# target to preprocess a source file
+src/SkeletalAnimatedObject.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimatedObject.cpp.i
+.PHONY : src/SkeletalAnimatedObject.cpp.i
+
+src/SkeletalAnimatedObject.s: src/SkeletalAnimatedObject.cpp.s
+.PHONY : src/SkeletalAnimatedObject.s
+
+# target to generate assembly for a file
+src/SkeletalAnimatedObject.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimatedObject.cpp.s
+.PHONY : src/SkeletalAnimatedObject.cpp.s
+
+src/SkeletalAnimation.o: src/SkeletalAnimation.cpp.o
+.PHONY : src/SkeletalAnimation.o
+
+# target to build an object file
+src/SkeletalAnimation.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimation.cpp.o
+.PHONY : src/SkeletalAnimation.cpp.o
+
+src/SkeletalAnimation.i: src/SkeletalAnimation.cpp.i
+.PHONY : src/SkeletalAnimation.i
+
+# target to preprocess a source file
+src/SkeletalAnimation.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimation.cpp.i
+.PHONY : src/SkeletalAnimation.cpp.i
+
+src/SkeletalAnimation.s: src/SkeletalAnimation.cpp.s
+.PHONY : src/SkeletalAnimation.s
+
+# target to generate assembly for a file
+src/SkeletalAnimation.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimation.cpp.s
+.PHONY : src/SkeletalAnimation.cpp.s
+
+src/SkeletalAnimationState.o: src/SkeletalAnimationState.cpp.o
+.PHONY : src/SkeletalAnimationState.o
+
+# target to build an object file
+src/SkeletalAnimationState.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimationState.cpp.o
+.PHONY : src/SkeletalAnimationState.cpp.o
+
+src/SkeletalAnimationState.i: src/SkeletalAnimationState.cpp.i
+.PHONY : src/SkeletalAnimationState.i
+
+# target to preprocess a source file
+src/SkeletalAnimationState.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimationState.cpp.i
+.PHONY : src/SkeletalAnimationState.cpp.i
+
+src/SkeletalAnimationState.s: src/SkeletalAnimationState.cpp.s
+.PHONY : src/SkeletalAnimationState.s
+
+# target to generate assembly for a file
+src/SkeletalAnimationState.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimationState.cpp.s
+.PHONY : src/SkeletalAnimationState.cpp.s
+
+src/SkeletalAnimationStateSet.o: src/SkeletalAnimationStateSet.cpp.o
+.PHONY : src/SkeletalAnimationStateSet.o
+
+# target to build an object file
+src/SkeletalAnimationStateSet.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimationStateSet.cpp.o
+.PHONY : src/SkeletalAnimationStateSet.cpp.o
+
+src/SkeletalAnimationStateSet.i: src/SkeletalAnimationStateSet.cpp.i
+.PHONY : src/SkeletalAnimationStateSet.i
+
+# target to preprocess a source file
+src/SkeletalAnimationStateSet.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimationStateSet.cpp.i
+.PHONY : src/SkeletalAnimationStateSet.cpp.i
+
+src/SkeletalAnimationStateSet.s: src/SkeletalAnimationStateSet.cpp.s
+.PHONY : src/SkeletalAnimationStateSet.s
+
+# target to generate assembly for a file
+src/SkeletalAnimationStateSet.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalAnimationStateSet.cpp.s
+.PHONY : src/SkeletalAnimationStateSet.cpp.s
+
+src/SkeletalShader.o: src/SkeletalShader.cpp.o
+.PHONY : src/SkeletalShader.o
+
+# target to build an object file
+src/SkeletalShader.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalShader.cpp.o
+.PHONY : src/SkeletalShader.cpp.o
+
+src/SkeletalShader.i: src/SkeletalShader.cpp.i
+.PHONY : src/SkeletalShader.i
+
+# target to preprocess a source file
+src/SkeletalShader.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalShader.cpp.i
+.PHONY : src/SkeletalShader.cpp.i
+
+src/SkeletalShader.s: src/SkeletalShader.cpp.s
+.PHONY : src/SkeletalShader.s
+
+# target to generate assembly for a file
+src/SkeletalShader.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletalShader.cpp.s
+.PHONY : src/SkeletalShader.cpp.s
+
+src/Skeleton.o: src/Skeleton.cpp.o
+.PHONY : src/Skeleton.o
+
+# target to build an object file
+src/Skeleton.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Skeleton.cpp.o
+.PHONY : src/Skeleton.cpp.o
+
+src/Skeleton.i: src/Skeleton.cpp.i
+.PHONY : src/Skeleton.i
+
+# target to preprocess a source file
+src/Skeleton.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Skeleton.cpp.i
+.PHONY : src/Skeleton.cpp.i
+
+src/Skeleton.s: src/Skeleton.cpp.s
+.PHONY : src/Skeleton.s
+
+# target to generate assembly for a file
+src/Skeleton.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Skeleton.cpp.s
+.PHONY : src/Skeleton.cpp.s
+
+src/SkeletonJoint.o: src/SkeletonJoint.cpp.o
+.PHONY : src/SkeletonJoint.o
+
+# target to build an object file
+src/SkeletonJoint.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletonJoint.cpp.o
+.PHONY : src/SkeletonJoint.cpp.o
+
+src/SkeletonJoint.i: src/SkeletonJoint.cpp.i
+.PHONY : src/SkeletonJoint.i
+
+# target to preprocess a source file
+src/SkeletonJoint.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletonJoint.cpp.i
+.PHONY : src/SkeletonJoint.cpp.i
+
+src/SkeletonJoint.s: src/SkeletonJoint.cpp.s
+.PHONY : src/SkeletonJoint.s
+
+# target to generate assembly for a file
+src/SkeletonJoint.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletonJoint.cpp.s
+.PHONY : src/SkeletonJoint.cpp.s
+
+src/SkeletonJointKeyframeSequence.o: src/SkeletonJointKeyframeSequence.cpp.o
+.PHONY : src/SkeletonJointKeyframeSequence.o
+
+# target to build an object file
+src/SkeletonJointKeyframeSequence.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletonJointKeyframeSequence.cpp.o
+.PHONY : src/SkeletonJointKeyframeSequence.cpp.o
+
+src/SkeletonJointKeyframeSequence.i: src/SkeletonJointKeyframeSequence.cpp.i
+.PHONY : src/SkeletonJointKeyframeSequence.i
+
+# target to preprocess a source file
+src/SkeletonJointKeyframeSequence.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletonJointKeyframeSequence.cpp.i
+.PHONY : src/SkeletonJointKeyframeSequence.cpp.i
+
+src/SkeletonJointKeyframeSequence.s: src/SkeletonJointKeyframeSequence.cpp.s
+.PHONY : src/SkeletonJointKeyframeSequence.s
+
+# target to generate assembly for a file
+src/SkeletonJointKeyframeSequence.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkeletonJointKeyframeSequence.cpp.s
+.PHONY : src/SkeletonJointKeyframeSequence.cpp.s
+
+src/SkinnedMesh.o: src/SkinnedMesh.cpp.o
+.PHONY : src/SkinnedMesh.o
+
+# target to build an object file
+src/SkinnedMesh.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkinnedMesh.cpp.o
+.PHONY : src/SkinnedMesh.cpp.o
+
+src/SkinnedMesh.i: src/SkinnedMesh.cpp.i
+.PHONY : src/SkinnedMesh.i
+
+# target to preprocess a source file
+src/SkinnedMesh.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkinnedMesh.cpp.i
+.PHONY : src/SkinnedMesh.cpp.i
+
+src/SkinnedMesh.s: src/SkinnedMesh.cpp.s
+.PHONY : src/SkinnedMesh.s
+
+# target to generate assembly for a file
+src/SkinnedMesh.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SkinnedMesh.cpp.s
+.PHONY : src/SkinnedMesh.cpp.s
+
+src/Spatial.o: src/Spatial.cpp.o
+.PHONY : src/Spatial.o
+
+# target to build an object file
+src/Spatial.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Spatial.cpp.o
+.PHONY : src/Spatial.cpp.o
+
+src/Spatial.i: src/Spatial.cpp.i
+.PHONY : src/Spatial.i
+
+# target to preprocess a source file
+src/Spatial.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Spatial.cpp.i
+.PHONY : src/Spatial.cpp.i
+
+src/Spatial.s: src/Spatial.cpp.s
+.PHONY : src/Spatial.s
+
+# target to generate assembly for a file
+src/Spatial.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Spatial.cpp.s
+.PHONY : src/Spatial.cpp.s
+
+src/Sphere.o: src/Sphere.cpp.o
+.PHONY : src/Sphere.o
+
+# target to build an object file
+src/Sphere.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Sphere.cpp.o
+.PHONY : src/Sphere.cpp.o
+
+src/Sphere.i: src/Sphere.cpp.i
+.PHONY : src/Sphere.i
+
+# target to preprocess a source file
+src/Sphere.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Sphere.cpp.i
+.PHONY : src/Sphere.cpp.i
+
+src/Sphere.s: src/Sphere.cpp.s
+.PHONY : src/Sphere.s
+
+# target to generate assembly for a file
+src/Sphere.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Sphere.cpp.s
+.PHONY : src/Sphere.cpp.s
+
+src/StackAllocator.o: src/StackAllocator.cpp.o
+.PHONY : src/StackAllocator.o
+
+# target to build an object file
+src/StackAllocator.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StackAllocator.cpp.o
+.PHONY : src/StackAllocator.cpp.o
+
+src/StackAllocator.i: src/StackAllocator.cpp.i
+.PHONY : src/StackAllocator.i
+
+# target to preprocess a source file
+src/StackAllocator.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StackAllocator.cpp.i
+.PHONY : src/StackAllocator.cpp.i
+
+src/StackAllocator.s: src/StackAllocator.cpp.s
+.PHONY : src/StackAllocator.s
+
+# target to generate assembly for a file
+src/StackAllocator.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StackAllocator.cpp.s
+.PHONY : src/StackAllocator.cpp.s
+
+src/StaticMesh.o: src/StaticMesh.cpp.o
+.PHONY : src/StaticMesh.o
+
+# target to build an object file
+src/StaticMesh.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StaticMesh.cpp.o
+.PHONY : src/StaticMesh.cpp.o
+
+src/StaticMesh.i: src/StaticMesh.cpp.i
+.PHONY : src/StaticMesh.i
+
+# target to preprocess a source file
+src/StaticMesh.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StaticMesh.cpp.i
+.PHONY : src/StaticMesh.cpp.i
+
+src/StaticMesh.s: src/StaticMesh.cpp.s
+.PHONY : src/StaticMesh.s
+
+# target to generate assembly for a file
+src/StaticMesh.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StaticMesh.cpp.s
+.PHONY : src/StaticMesh.cpp.s
+
+src/StaticObject.o: src/StaticObject.cpp.o
+.PHONY : src/StaticObject.o
+
+# target to build an object file
+src/StaticObject.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StaticObject.cpp.o
+.PHONY : src/StaticObject.cpp.o
+
+src/StaticObject.i: src/StaticObject.cpp.i
+.PHONY : src/StaticObject.i
+
+# target to preprocess a source file
+src/StaticObject.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StaticObject.cpp.i
+.PHONY : src/StaticObject.cpp.i
+
+src/StaticObject.s: src/StaticObject.cpp.s
+.PHONY : src/StaticObject.s
+
+# target to generate assembly for a file
+src/StaticObject.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StaticObject.cpp.s
+.PHONY : src/StaticObject.cpp.s
+
+src/StringUtil.o: src/StringUtil.cpp.o
+.PHONY : src/StringUtil.o
+
+# target to build an object file
+src/StringUtil.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StringUtil.cpp.o
+.PHONY : src/StringUtil.cpp.o
+
+src/StringUtil.i: src/StringUtil.cpp.i
+.PHONY : src/StringUtil.i
+
+# target to preprocess a source file
+src/StringUtil.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StringUtil.cpp.i
+.PHONY : src/StringUtil.cpp.i
+
+src/StringUtil.s: src/StringUtil.cpp.s
+.PHONY : src/StringUtil.s
+
+# target to generate assembly for a file
+src/StringUtil.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/StringUtil.cpp.s
+.PHONY : src/StringUtil.cpp.s
+
+src/SubMesh.o: src/SubMesh.cpp.o
+.PHONY : src/SubMesh.o
+
+# target to build an object file
+src/SubMesh.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SubMesh.cpp.o
+.PHONY : src/SubMesh.cpp.o
+
+src/SubMesh.i: src/SubMesh.cpp.i
+.PHONY : src/SubMesh.i
+
+# target to preprocess a source file
+src/SubMesh.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SubMesh.cpp.i
+.PHONY : src/SubMesh.cpp.i
+
+src/SubMesh.s: src/SubMesh.cpp.s
+.PHONY : src/SubMesh.s
+
+# target to generate assembly for a file
+src/SubMesh.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/SubMesh.cpp.s
+.PHONY : src/SubMesh.cpp.s
+
+src/TMF.o: src/TMF.cpp.o
+.PHONY : src/TMF.o
+
+# target to build an object file
+src/TMF.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/TMF.cpp.o
+.PHONY : src/TMF.cpp.o
+
+src/TMF.i: src/TMF.cpp.i
+.PHONY : src/TMF.i
+
+# target to preprocess a source file
+src/TMF.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/TMF.cpp.i
+.PHONY : src/TMF.cpp.i
+
+src/TMF.s: src/TMF.cpp.s
+.PHONY : src/TMF.s
+
+# target to generate assembly for a file
+src/TMF.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/TMF.cpp.s
+.PHONY : src/TMF.cpp.s
+
+src/Texture.o: src/Texture.cpp.o
+.PHONY : src/Texture.o
+
+# target to build an object file
+src/Texture.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Texture.cpp.o
+.PHONY : src/Texture.cpp.o
+
+src/Texture.i: src/Texture.cpp.i
+.PHONY : src/Texture.i
+
+# target to preprocess a source file
+src/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Texture.cpp.i
+.PHONY : src/Texture.cpp.i
+
+src/Texture.s: src/Texture.cpp.s
+.PHONY : src/Texture.s
+
+# target to generate assembly for a file
+src/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Texture.cpp.s
+.PHONY : src/Texture.cpp.s
+
+src/Thread.o: src/Thread.cpp.o
+.PHONY : src/Thread.o
+
+# target to build an object file
+src/Thread.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Thread.cpp.o
+.PHONY : src/Thread.cpp.o
+
+src/Thread.i: src/Thread.cpp.i
+.PHONY : src/Thread.i
+
+# target to preprocess a source file
+src/Thread.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Thread.cpp.i
+.PHONY : src/Thread.cpp.i
+
+src/Thread.s: src/Thread.cpp.s
+.PHONY : src/Thread.s
+
+# target to generate assembly for a file
+src/Thread.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Thread.cpp.s
+.PHONY : src/Thread.cpp.s
+
+src/Window.o: src/Window.cpp.o
+.PHONY : src/Window.o
+
+# target to build an object file
+src/Window.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Window.cpp.o
+.PHONY : src/Window.cpp.o
+
+src/Window.i: src/Window.cpp.i
+.PHONY : src/Window.i
+
+# target to preprocess a source file
+src/Window.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Window.cpp.i
+.PHONY : src/Window.cpp.i
+
+src/Window.s: src/Window.cpp.s
+.PHONY : src/Window.s
+
+# target to generate assembly for a file
+src/Window.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/Window.cpp.s
+.PHONY : src/Window.cpp.s
+
+src/assert.o: src/assert.cpp.o
+.PHONY : src/assert.o
+
+# target to build an object file
+src/assert.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/assert.cpp.o
+.PHONY : src/assert.cpp.o
+
+src/assert.i: src/assert.cpp.i
+.PHONY : src/assert.i
+
+# target to preprocess a source file
+src/assert.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/assert.cpp.i
+.PHONY : src/assert.cpp.i
+
+src/assert.s: src/assert.cpp.s
+.PHONY : src/assert.s
+
+# target to generate assembly for a file
+src/assert.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/assert.cpp.s
+.PHONY : src/assert.cpp.s
+
+src/line3.o: src/line3.cpp.o
+.PHONY : src/line3.o
+
+# target to build an object file
+src/line3.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/line3.cpp.o
+.PHONY : src/line3.cpp.o
+
+src/line3.i: src/line3.cpp.i
+.PHONY : src/line3.i
+
+# target to preprocess a source file
+src/line3.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/line3.cpp.i
+.PHONY : src/line3.cpp.i
+
+src/line3.s: src/line3.cpp.s
+.PHONY : src/line3.s
+
+# target to generate assembly for a file
+src/line3.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/line3.cpp.s
+.PHONY : src/line3.cpp.s
+
+src/matrix4.o: src/matrix4.cpp.o
+.PHONY : src/matrix4.o
+
+# target to build an object file
+src/matrix4.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/matrix4.cpp.o
+.PHONY : src/matrix4.cpp.o
+
+src/matrix4.i: src/matrix4.cpp.i
+.PHONY : src/matrix4.i
+
+# target to preprocess a source file
+src/matrix4.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/matrix4.cpp.i
+.PHONY : src/matrix4.cpp.i
+
+src/matrix4.s: src/matrix4.cpp.s
+.PHONY : src/matrix4.s
+
+# target to generate assembly for a file
+src/matrix4.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/matrix4.cpp.s
+.PHONY : src/matrix4.cpp.s
+
+src/plane.o: src/plane.cpp.o
+.PHONY : src/plane.o
+
+# target to build an object file
+src/plane.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/plane.cpp.o
+.PHONY : src/plane.cpp.o
+
+src/plane.i: src/plane.cpp.i
+.PHONY : src/plane.i
+
+# target to preprocess a source file
+src/plane.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/plane.cpp.i
+.PHONY : src/plane.cpp.i
+
+src/plane.s: src/plane.cpp.s
+.PHONY : src/plane.s
+
+# target to generate assembly for a file
+src/plane.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/plane.cpp.s
+.PHONY : src/plane.cpp.s
+
+src/psx_File.o: src/psx_File.cpp.o
+.PHONY : src/psx_File.o
+
+# target to build an object file
+src/psx_File.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/psx_File.cpp.o
+.PHONY : src/psx_File.cpp.o
+
+src/psx_File.i: src/psx_File.cpp.i
+.PHONY : src/psx_File.i
+
+# target to preprocess a source file
+src/psx_File.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/psx_File.cpp.i
+.PHONY : src/psx_File.cpp.i
+
+src/psx_File.s: src/psx_File.cpp.s
+.PHONY : src/psx_File.s
+
+# target to generate assembly for a file
+src/psx_File.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/psx_File.cpp.s
+.PHONY : src/psx_File.cpp.s
+
+src/quaternion.o: src/quaternion.cpp.o
+.PHONY : src/quaternion.o
+
+# target to build an object file
+src/quaternion.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/quaternion.cpp.o
+.PHONY : src/quaternion.cpp.o
+
+src/quaternion.i: src/quaternion.cpp.i
+.PHONY : src/quaternion.i
+
+# target to preprocess a source file
+src/quaternion.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/quaternion.cpp.i
+.PHONY : src/quaternion.cpp.i
+
+src/quaternion.s: src/quaternion.cpp.s
+.PHONY : src/quaternion.s
+
+# target to generate assembly for a file
+src/quaternion.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/quaternion.cpp.s
+.PHONY : src/quaternion.cpp.s
+
+src/ref.o: src/ref.cpp.o
+.PHONY : src/ref.o
+
+# target to build an object file
+src/ref.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ref.cpp.o
+.PHONY : src/ref.cpp.o
+
+src/ref.i: src/ref.cpp.i
+.PHONY : src/ref.i
+
+# target to preprocess a source file
+src/ref.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ref.cpp.i
+.PHONY : src/ref.cpp.i
+
+src/ref.s: src/ref.cpp.s
+.PHONY : src/ref.s
+
+# target to generate assembly for a file
+src/ref.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/ref.cpp.s
+.PHONY : src/ref.cpp.s
+
+src/vector2.o: src/vector2.cpp.o
+.PHONY : src/vector2.o
+
+# target to build an object file
+src/vector2.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/vector2.cpp.o
+.PHONY : src/vector2.cpp.o
+
+src/vector2.i: src/vector2.cpp.i
+.PHONY : src/vector2.i
+
+# target to preprocess a source file
+src/vector2.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/vector2.cpp.i
+.PHONY : src/vector2.cpp.i
+
+src/vector2.s: src/vector2.cpp.s
+.PHONY : src/vector2.s
+
+# target to generate assembly for a file
+src/vector2.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/vector2.cpp.s
+.PHONY : src/vector2.cpp.s
+
+src/vector3.o: src/vector3.cpp.o
+.PHONY : src/vector3.o
+
+# target to build an object file
+src/vector3.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/vector3.cpp.o
+.PHONY : src/vector3.cpp.o
+
+src/vector3.i: src/vector3.cpp.i
+.PHONY : src/vector3.i
+
+# target to preprocess a source file
+src/vector3.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/vector3.cpp.i
+.PHONY : src/vector3.cpp.i
+
+src/vector3.s: src/vector3.cpp.s
+.PHONY : src/vector3.s
+
+# target to generate assembly for a file
+src/vector3.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/vector3.cpp.s
+.PHONY : src/vector3.cpp.s
+
+src/win_File.o: src/win_File.cpp.o
+.PHONY : src/win_File.o
+
+# target to build an object file
+src/win_File.cpp.o:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/win_File.cpp.o
+.PHONY : src/win_File.cpp.o
+
+src/win_File.i: src/win_File.cpp.i
+.PHONY : src/win_File.i
+
+# target to preprocess a source file
+src/win_File.cpp.i:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/win_File.cpp.i
+.PHONY : src/win_File.cpp.i
+
+src/win_File.s: src/win_File.cpp.s
+.PHONY : src/win_File.s
+
+# target to generate assembly for a file
+src/win_File.cpp.s:
+	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/src/win_File.cpp.s
+.PHONY : src/win_File.cpp.s
 
 # Help Target
 help:
@@ -118,8 +2206,269 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... foo"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+	@echo "... CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.i"
+	@echo "... CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.s"
+	@echo "... build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+	@echo "... build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.i"
+	@echo "... build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.s"
+	@echo "... demo/game.o"
+	@echo "... demo/game.i"
+	@echo "... demo/game.s"
+	@echo "... demo/main.o"
+	@echo "... demo/main.i"
+	@echo "... demo/main.s"
+	@echo "... src/AABB.o"
+	@echo "... src/AABB.i"
+	@echo "... src/AABB.s"
+	@echo "... src/AmbientLight.o"
+	@echo "... src/AmbientLight.i"
+	@echo "... src/AmbientLight.s"
+	@echo "... src/CFileStream.o"
+	@echo "... src/CFileStream.i"
+	@echo "... src/CFileStream.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
+	@echo "... src/Color.o"
+	@echo "... src/Color.i"
+	@echo "... src/Color.s"
+	@echo "... src/CullingVolumesSet.o"
+	@echo "... src/CullingVolumesSet.i"
+	@echo "... src/CullingVolumesSet.s"
+	@echo "... src/DirectionalLight.o"
+	@echo "... src/DirectionalLight.i"
+	@echo "... src/DirectionalLight.s"
+	@echo "... src/DirectionalShadowMap.o"
+	@echo "... src/DirectionalShadowMap.i"
+	@echo "... src/DirectionalShadowMap.s"
+	@echo "... src/Event.o"
+	@echo "... src/Event.i"
+	@echo "... src/Event.s"
+	@echo "... src/EventConverter.o"
+	@echo "... src/EventConverter.i"
+	@echo "... src/EventConverter.s"
+	@echo "... src/Exception.o"
+	@echo "... src/Exception.i"
+	@echo "... src/Exception.s"
+	@echo "... src/File.o"
+	@echo "... src/File.i"
+	@echo "... src/File.s"
+	@echo "... src/FrameDescription.o"
+	@echo "... src/FrameDescription.i"
+	@echo "... src/FrameDescription.s"
+	@echo "... src/Frustum.o"
+	@echo "... src/Frustum.i"
+	@echo "... src/Frustum.s"
+	@echo "... src/GenericGeometry.o"
+	@echo "... src/GenericGeometry.i"
+	@echo "... src/GenericGeometry.s"
+	@echo "... src/GenericMemoryOrdersGenerator.o"
+	@echo "... src/GenericMemoryOrdersGenerator.i"
+	@echo "... src/GenericMemoryOrdersGenerator.s"
+	@echo "... src/HMF.o"
+	@echo "... src/HMF.i"
+	@echo "... src/HMF.s"
+	@echo "... src/HeightMapMesh.o"
+	@echo "... src/HeightMapMesh.i"
+	@echo "... src/HeightMapMesh.s"
+	@echo "... src/HeightMapObject.o"
+	@echo "... src/HeightMapObject.i"
+	@echo "... src/HeightMapObject.s"
+	@echo "... src/IDrawTask.o"
+	@echo "... src/IDrawTask.i"
+	@echo "... src/IDrawTask.s"
+	@echo "... src/IManagedObject.o"
+	@echo "... src/IManagedObject.i"
+	@echo "... src/IManagedObject.s"
+	@echo "... src/IRenderTarget.o"
+	@echo "... src/IRenderTarget.i"
+	@echo "... src/IRenderTarget.s"
+	@echo "... src/IResource.o"
+	@echo "... src/IResource.i"
+	@echo "... src/IResource.s"
+	@echo "... src/IStream.o"
+	@echo "... src/IStream.i"
+	@echo "... src/IStream.s"
+	@echo "... src/Keyboard.o"
+	@echo "... src/Keyboard.i"
+	@echo "... src/Keyboard.s"
+	@echo "... src/LUP.o"
+	@echo "... src/LUP.i"
+	@echo "... src/LUP.s"
+	@echo "... src/Light.o"
+	@echo "... src/Light.i"
+	@echo "... src/Light.s"
+	@echo "... src/LightShader.o"
+	@echo "... src/LightShader.i"
+	@echo "... src/LightShader.s"
+	@echo "... src/LogManager.o"
+	@echo "... src/LogManager.i"
+	@echo "... src/LogManager.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
+	@echo "... src/MFCommon.o"
+	@echo "... src/MFCommon.i"
+	@echo "... src/MFCommon.s"
+	@echo "... src/MTF.o"
+	@echo "... src/MTF.i"
+	@echo "... src/MTF.s"
+	@echo "... src/Material.o"
+	@echo "... src/Material.i"
+	@echo "... src/Material.s"
+	@echo "... src/MemoryManager.o"
+	@echo "... src/MemoryManager.i"
+	@echo "... src/MemoryManager.s"
+	@echo "... src/ModelFactory.o"
+	@echo "... src/ModelFactory.i"
+	@echo "... src/ModelFactory.s"
+	@echo "... src/Mouse.o"
+	@echo "... src/Mouse.i"
+	@echo "... src/Mouse.s"
+	@echo "... src/Node.o"
+	@echo "... src/Node.i"
+	@echo "... src/Node.s"
+	@echo "... src/Pick.o"
+	@echo "... src/Pick.i"
+	@echo "... src/Pick.s"
+	@echo "... src/PointLight.o"
+	@echo "... src/PointLight.i"
+	@echo "... src/PointLight.s"
+	@echo "... src/Polyhedron.o"
+	@echo "... src/Polyhedron.i"
+	@echo "... src/Polyhedron.s"
+	@echo "... src/RT.o"
+	@echo "... src/RT.i"
+	@echo "... src/RT.s"
+	@echo "... src/Renderer.o"
+	@echo "... src/Renderer.i"
+	@echo "... src/Renderer.s"
+	@echo "... src/RendererLightSetup.o"
+	@echo "... src/RendererLightSetup.i"
+	@echo "... src/RendererLightSetup.s"
+	@echo "... src/RendererSkeletonSetup.o"
+	@echo "... src/RendererSkeletonSetup.i"
+	@echo "... src/RendererSkeletonSetup.s"
+	@echo "... src/ResourceManager.o"
+	@echo "... src/ResourceManager.i"
+	@echo "... src/ResourceManager.s"
+	@echo "... src/RootObject.o"
+	@echo "... src/RootObject.i"
+	@echo "... src/RootObject.s"
+	@echo "... src/SAF.o"
+	@echo "... src/SAF.i"
+	@echo "... src/SAF.s"
+	@echo "... src/SCF.o"
+	@echo "... src/SCF.i"
+	@echo "... src/SCF.s"
+	@echo "... src/SMF.o"
+	@echo "... src/SMF.i"
+	@echo "... src/SMF.s"
+	@echo "... src/SRT.o"
+	@echo "... src/SRT.i"
+	@echo "... src/SRT.s"
+	@echo "... src/ShaderFlags.o"
+	@echo "... src/ShaderFlags.i"
+	@echo "... src/ShaderFlags.s"
+	@echo "... src/ShaderManager.o"
+	@echo "... src/ShaderManager.i"
+	@echo "... src/ShaderManager.s"
+	@echo "... src/ShaderProgram.o"
+	@echo "... src/ShaderProgram.i"
+	@echo "... src/ShaderProgram.s"
+	@echo "... src/SkeletalAnimatedObject.o"
+	@echo "... src/SkeletalAnimatedObject.i"
+	@echo "... src/SkeletalAnimatedObject.s"
+	@echo "... src/SkeletalAnimation.o"
+	@echo "... src/SkeletalAnimation.i"
+	@echo "... src/SkeletalAnimation.s"
+	@echo "... src/SkeletalAnimationState.o"
+	@echo "... src/SkeletalAnimationState.i"
+	@echo "... src/SkeletalAnimationState.s"
+	@echo "... src/SkeletalAnimationStateSet.o"
+	@echo "... src/SkeletalAnimationStateSet.i"
+	@echo "... src/SkeletalAnimationStateSet.s"
+	@echo "... src/SkeletalShader.o"
+	@echo "... src/SkeletalShader.i"
+	@echo "... src/SkeletalShader.s"
+	@echo "... src/Skeleton.o"
+	@echo "... src/Skeleton.i"
+	@echo "... src/Skeleton.s"
+	@echo "... src/SkeletonJoint.o"
+	@echo "... src/SkeletonJoint.i"
+	@echo "... src/SkeletonJoint.s"
+	@echo "... src/SkeletonJointKeyframeSequence.o"
+	@echo "... src/SkeletonJointKeyframeSequence.i"
+	@echo "... src/SkeletonJointKeyframeSequence.s"
+	@echo "... src/SkinnedMesh.o"
+	@echo "... src/SkinnedMesh.i"
+	@echo "... src/SkinnedMesh.s"
+	@echo "... src/Spatial.o"
+	@echo "... src/Spatial.i"
+	@echo "... src/Spatial.s"
+	@echo "... src/Sphere.o"
+	@echo "... src/Sphere.i"
+	@echo "... src/Sphere.s"
+	@echo "... src/StackAllocator.o"
+	@echo "... src/StackAllocator.i"
+	@echo "... src/StackAllocator.s"
+	@echo "... src/StaticMesh.o"
+	@echo "... src/StaticMesh.i"
+	@echo "... src/StaticMesh.s"
+	@echo "... src/StaticObject.o"
+	@echo "... src/StaticObject.i"
+	@echo "... src/StaticObject.s"
+	@echo "... src/StringUtil.o"
+	@echo "... src/StringUtil.i"
+	@echo "... src/StringUtil.s"
+	@echo "... src/SubMesh.o"
+	@echo "... src/SubMesh.i"
+	@echo "... src/SubMesh.s"
+	@echo "... src/TMF.o"
+	@echo "... src/TMF.i"
+	@echo "... src/TMF.s"
+	@echo "... src/Texture.o"
+	@echo "... src/Texture.i"
+	@echo "... src/Texture.s"
+	@echo "... src/Thread.o"
+	@echo "... src/Thread.i"
+	@echo "... src/Thread.s"
+	@echo "... src/Window.o"
+	@echo "... src/Window.i"
+	@echo "... src/Window.s"
+	@echo "... src/assert.o"
+	@echo "... src/assert.i"
+	@echo "... src/assert.s"
+	@echo "... src/line3.o"
+	@echo "... src/line3.i"
+	@echo "... src/line3.s"
+	@echo "... src/matrix4.o"
+	@echo "... src/matrix4.i"
+	@echo "... src/matrix4.s"
+	@echo "... src/plane.o"
+	@echo "... src/plane.i"
+	@echo "... src/plane.s"
+	@echo "... src/psx_File.o"
+	@echo "... src/psx_File.i"
+	@echo "... src/psx_File.s"
+	@echo "... src/quaternion.o"
+	@echo "... src/quaternion.i"
+	@echo "... src/quaternion.s"
+	@echo "... src/ref.o"
+	@echo "... src/ref.i"
+	@echo "... src/ref.s"
+	@echo "... src/vector2.o"
+	@echo "... src/vector2.i"
+	@echo "... src/vector2.s"
+	@echo "... src/vector3.o"
+	@echo "... src/vector3.i"
+	@echo "... src/vector3.s"
+	@echo "... src/win_File.o"
+	@echo "... src/win_File.i"
+	@echo "... src/win_File.s"
 .PHONY : help
 
 

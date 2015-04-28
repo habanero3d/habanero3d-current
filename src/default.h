@@ -26,8 +26,6 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
 
-#include "LogManager.h"
-
 namespace Habanero
 {
 	/*!
@@ -51,8 +49,3 @@ namespace Habanero
 	typedef unsigned int uint;
 	typedef unsigned long ulong;
 }
-
-
-#define NEWLOG LogManager::getInstance().Log
-
-#include "assert.h"

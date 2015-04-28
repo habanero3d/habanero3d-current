@@ -29,6 +29,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include <string>
 #include <memory>
 #include "CFileStream.h"
+#include "LogManager.h"
 
 namespace Habanero
 {

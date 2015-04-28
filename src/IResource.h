@@ -25,6 +25,7 @@ Author: Andrzej "akuda" Skalski
 #pragma once
 
 #include "Enum.h"
+#include <string>
 
 namespace Habanero
 {

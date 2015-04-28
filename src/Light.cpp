@@ -1,6 +1,7 @@
 
 /* author: michauzo */
 
+#include "LogManager.h"
 #include "Light.h"
 #include "vector3.h"
 #include "Memory.h"

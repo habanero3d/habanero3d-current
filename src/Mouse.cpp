@@ -22,6 +22,9 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include "Enum.h"
 #include "Window.h"
 #include "Mouse.h"
+#include <cstdio>
+#include "assert.h"
+
 
 #include <SFML/Window.hpp>
 

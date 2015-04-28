@@ -24,6 +24,9 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "FrameDescription.h"
 #include "Spatial.h"
+#include <cstddef>
+
+using namespace std;
 
 namespace Habanero
 {

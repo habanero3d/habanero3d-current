@@ -26,7 +26,6 @@ Author: Andrzej "akuda" Skalski
 
 #include <cstdio>
 #include <string>
-
 #include "Singleton.h"
 
 namespace Habanero {
@@ -51,3 +50,5 @@ namespace Habanero {
 	};
 
 }
+
+#define NEWLOG LogManager::getInstance().Log

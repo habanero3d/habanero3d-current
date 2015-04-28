@@ -8,6 +8,7 @@
 #include "AmbientLight.h"
 
 #include <cstring>
+#include <string>
 
 /* @file
 @author: michauzo

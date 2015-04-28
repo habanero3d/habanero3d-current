@@ -27,7 +27,9 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 	Wzorzec singletona, wariant dziedziczący z aktywną inicjalizacją.
  */
 
+#include "default.h"
 #include "assert.h"
+#include <cstdio>
 
 template<typename T> class Singleton
 {

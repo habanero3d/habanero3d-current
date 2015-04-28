@@ -1,3 +1,4 @@
+#include <string>
 #include "HMF.h"
 #include "File.h"
 #include "Exception.h"

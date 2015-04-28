@@ -23,6 +23,9 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 Author: Andrzej "akuda" Skalski
 */
 #include <string.h>
+#include <cstdio>
+#include "assert.h"
+
 
 #include "SkeletonJoint.h"
 #include "StringUtil.h"

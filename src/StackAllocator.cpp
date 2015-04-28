@@ -23,6 +23,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include "StackAllocator.h"
 #include "MemoryManager.h"
 #include "Memory.h"
+#include "LogManager.h"
 
 namespace Habanero
 {

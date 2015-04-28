@@ -24,6 +24,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 @brief Stan pojedynczej animacji
 @author akuda, qfel
 */
+#include "LogManager.h"
 #include "matrix4.h"
 #include "Skeleton.h"
 #include "SkeletalAnimation.h"

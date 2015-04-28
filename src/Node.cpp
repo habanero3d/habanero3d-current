@@ -20,6 +20,8 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "Node.h"
+#include <cstdio>
+#include "assert.h"
 
 namespace Habanero
 {

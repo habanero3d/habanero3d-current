@@ -25,6 +25,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 #include "matrix4.h"
 #include "Memory.h"
 #include "HabMath.h"
+#include "LogManager.h"
 
 namespace Habanero
 {

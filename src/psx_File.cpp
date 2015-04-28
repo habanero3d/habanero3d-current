@@ -30,6 +30,7 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "Exception.h"
 #include "File.h"
+#include "LogManager.h"
 
 namespace Habanero
 {

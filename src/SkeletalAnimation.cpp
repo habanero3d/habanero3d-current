@@ -22,9 +22,11 @@ along with Habanero3d.  If not, see <http://www.gnu.org/licenses/>.
 /*! @file
 @author akuda
 */
+
 #include <algorithm>
 #include <string.h>
 
+#include "LogManager.h"
 #include "SkeletonJointKeyframeSequence.h"
 #include "SkeletonJointKeyframe.h"
 #include "SkeletalAnimation.h"
